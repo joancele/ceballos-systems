@@ -27,9 +27,7 @@ import Footer from '../components/organisms/Footer/Footer.astro';
           <p class="article-lead">
             Algoritmo de cálculo de calificaciones basado en la ponderación por corresponsabilidad y la evaluación disociada (LOMLOE Andalucía).
           </p>
-        </div>
-
-        <!-- Coresponsibility Justification -->
+                <!-- Coresponsibility Justification -->
         <section class="content-section">
           <h2 class="section-title">La Ponderación por Corresponsabilidad</h2>
           <div class="info-box glass">
@@ -37,7 +35,7 @@ import Footer from '../components/organisms/Footer/Footer.astro';
               Para erradicar la inacción en el trabajo cooperativo y garantizar la coeducación líquida, el Cuadro de Mando segmenta el proyecto grupal en sub-apartados temáticos vinculados a los roles específicos de la tripulación.
             </p>
             <p>
-              Para cada estudiante individual, <strong>el apartado técnico correspondiente a su rol pondera un 60% de su nota técnica</strong>, mientras que la nota técnica del resto de apartados grupales de sus compañeros pondera el <strong>40%</strong> restante. Esto incentiva el dominio técnico de su propia especialidad a la vez que fomenta el éxito colectivo de la misión.
+              Para cada estudiante individual, <strong>el apartado técnico correspondiente a su especialidad pondera un 40% de su nota final</strong>, mientras que los otros 3 apartados comunes ponderan un <strong>20% cada uno</strong> (20% × 3 = 60% común + 40% especialidad = 100%). Esto incentiva el dominio técnico de su propia especialidad a la vez que fomenta el éxito colectivo de la misión.
             </p>
           </div>
         </section>
@@ -46,7 +44,7 @@ import Footer from '../components/organisms/Footer/Footer.astro';
         <section class="content-section">
           <h2 class="section-title">Caso Práctico Simulado: Tripulación "Ares-3"</h2>
           <p class="section-intro">
-            Simulación del cálculo de calificaciones trianguladas para un equipo heterogéneo que demuestra la evaluación disociada (separar la implicación individual de los fallos de precisión técnica de sus compañeros):
+            Simulación del cálculo de calificaciones trianguladas para un equipo heterogéneo que demuestra la evaluación disociada (separar la implicación individual de los fallos de precisión técnica de sus compañeros) con los pesos 40% (especialidad) / 20% (comunes):
           </p>
 
           <div class="two-col-grid">
@@ -57,16 +55,17 @@ import Footer from '../components/organisms/Footer/Footer.astro';
                 <span class="role-badge mono">Especialista en Estructuras</span>
               </div>
               <ul class="score-details mono">
-                <li>• Nota de su Rol (Estructuras): 9.0 / 10</li>
-                <li>• Nota del resto (Programación): 5.0 / 10</li>
-                <li>• Nota de Implicación / Diario: 10 / 10</li>
+                <li>• Estructuras (su especialidad): 9.0 / 10 (40%)</li>
+                <li>• Programación: 5.0 / 10 (20%)</li>
+                <li>• Mecanizado: 8.0 / 10 (20%)</li>
+                <li>• Conexionado y Seguridad: 10.0 / 10 (20%)</li>
               </ul>
               <div class="math-block mono">
-                <p class="math-step">Técnica Individual = (9.0 * 0.6) + (5.0 * 0.4) = 7.4</p>
-                <p class="math-step">Nota Final = (7.4 * 0.5) + (10 * 0.5) = 8.7</p>
+                <p class="math-step">Técnica Individual = (9.0 * 0.4) + (5.0 * 0.2) + (8.0 * 0.2) + (10.0 * 0.2)</p>
+                <p class="math-step">Nota Final = 3.6 + 1.0 + 1.6 + 2.0 = 8.2</p>
               </div>
               <div class="verdict-box green-feedback">
-                <strong>CALIFICACIÓN FINAL: 8.7 (Notable)</strong><br/>
+                <strong>CALIFICACIÓN FINAL: 8.2 (Notable)</strong><br/>
                 <em>Justificación pedagógica:</em> La evaluación disociada protege la nota de este alumno. Su esfuerzo óptimo y excelente labor en su chasis compensan los errores algorítmicos cometidos por su compañero.
               </div>
             </div>
@@ -78,19 +77,38 @@ import Footer from '../components/organisms/Footer/Footer.astro';
                 <span class="role-badge mono">Especialista en Programación</span>
               </div>
               <ul class="score-details mono">
-                <li>• Nota de su Rol (Programación): 5.0 / 10</li>
-                <li>• Nota del resto (Estructuras): 9.0 / 10</li>
-                <li>• Nota de Implicación / Diario: 7.0 / 10</li>
+                <li>• Programación (su especialidad): 5.0 / 10 (40%)</li>
+                <li>• Estructuras: 9.0 / 10 (20%)</li>
+                <li>• Mecanizado: 8.0 / 10 (20%)</li>
+                <li>• Conexionado y Seguridad: 7.0 / 10 (20%)</li>
               </ul>
               <div class="math-block mono">
-                <p class="math-step">Técnica Individual = (5.0 * 0.6) + (9.0 * 0.4) = 6.6</p>
-                <p class="math-step">Nota Final = (6.6 * 0.5) + (7.0 * 0.5) = 6.8</p>
+                <p class="math-step">Técnica Individual = (5.0 * 0.4) + (9.0 * 0.2) + (8.0 * 0.2) + (7.0 * 0.2)</p>
+                <p class="math-step">Nota Final = 2.0 + 1.8 + 1.6 + 1.4 = 6.8</p>
               </div>
               <div class="verdict-box yellow-feedback">
                 <strong>CALIFICACIÓN FINAL: 6.8 (Bien)</strong><br/>
                 <em>Justificación pedagógica:</em> El fallo en el rebote del relé (histéresis ausente) penaliza su nota técnica individual, pero se beneficia de la excelente estructura construida por su compañero.
               </div>
             </div>
+          </div>
+        </section>
+
+        <!-- CTA to Full Assessment Demo -->
+        <section class="content-section">
+          <h2 class="section-title">Perfil de Calificación Completo</h2>
+          <div class="cta-panel glass">
+            <div class="cta-details">
+              <span class="cta-badge mono">[DEMOSTRACIÓN_ACTIVA]</span>
+              <h3 class="cta-title">Desglose de Calificación: Lucas (Constructor)</h3>
+              <p class="cta-description">
+                Comprueba la triangulación de notas final de un alumno (Lucas, con rol de Constructor) aplicando la ponderación legal de la LOMLOE, incluyendo la diana de coevaluación y las listas de cotejo del taller.
+              </p>
+            </div>
+            <a href="/sa8/calificacion/demostracion" class="btn btn-outline cta-btn">
+              Ver Calificación
+              <span class="btn-arrow">→</span>
+            </a>
           </div>
         </section>
       </article>
