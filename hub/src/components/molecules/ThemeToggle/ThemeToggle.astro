@@ -1,0 +1,17 @@
+---
+import './ThemeToggle.css';
+import Icon from '../../atoms/Icon/Icon.astro';
+---
+
+<button id="theme-toggle" class="theme-toggle-btn glass" aria-label="Cambiar tema">
+  <div class="toggle-icon-container">
+    <div class="sun-wrapper">
+      <Icon name="sun" size={20} />
+    </div>
+    <div class="moon-wrapper">
+      <Icon name="moon" size={20} />
+    </div>
+  </div>
+</button>
+
+<script src="./ThemeToggle.js"></script>

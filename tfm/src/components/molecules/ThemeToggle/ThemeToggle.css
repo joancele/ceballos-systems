@@ -1,0 +1,61 @@
+.theme-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 0;
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.theme-toggle-btn:hover {
+  transform: scale(1.05);
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 15px 0 rgba(139, 92, 246, 0.2);
+}
+
+.toggle-icon-container {
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+
+.sun-wrapper, .moon-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Dark theme active (default) -> Sun is hidden, Moon is visible */
+[data-theme="dark"] .sun-wrapper {
+  transform: rotate(90deg) scale(0);
+  opacity: 0;
+}
+
+[data-theme="dark"] .moon-wrapper {
+  transform: rotate(0) scale(1);
+  opacity: 1;
+}
+
+/* Light theme active -> Sun is visible, Moon is hidden */
+[data-theme="light"] .sun-wrapper {
+  transform: rotate(0) scale(1);
+  opacity: 1;
+}
+
+[data-theme="light"] .moon-wrapper {
+  transform: rotate(-90deg) scale(0);
+  opacity: 0;
+}

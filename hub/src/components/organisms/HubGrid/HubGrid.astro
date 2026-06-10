@@ -1,0 +1,29 @@
+---
+import './HubGrid.css';
+import HubCard from '../../molecules/HubCard/HubCard.astro';
+
+interface CardItem {
+  title: string;
+  description: string;
+  tag: string;
+  icon: string;
+  href: string;
+  actionText?: string;
+}
+
+interface Props {
+  cards: CardItem[];
+}
+
+const { cards } = Astro.props;
+---
+
+<section class="hub-grid-section">
+  <div class="hub-grid">
+    {cards.map(card => (
+      <HubCard {...card} />
+    ))}
+  </div>
+</section>
+
+<script src="./HubGrid.js"></script>

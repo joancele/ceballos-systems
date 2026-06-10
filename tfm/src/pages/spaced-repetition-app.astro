@@ -1,0 +1,383 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/organisms/Header/Header.astro';
+import Footer from '../components/organisms/Footer/Footer.astro';
+---
+
+<Layout title="TFM Recursos | App de Test Adaptativa">
+  <div class="site-wrapper">
+    <header class="subhub-header">
+      <div class="header-container">
+        <a href="/#" class="back-link mono">
+          <span class="arrow">←</span> Volver a Recursos
+        </a>
+        <div class="breadcrumbs mono">
+          <span>Recursos</span> / <span class="active">Test Adaptativo</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <article class="resource-article">
+        <div class="article-header">
+          <div class="tag-badge mono dot-green">
+            <span class="dot"></span> INSTRUCCIÓN ADAPTATIVA
+          </div>
+          <h1 class="article-title">App de Test: Repetición Espaciada</h1>
+          <p class="article-lead">
+            Prototipo didáctico basado en algoritmos de espaciado adaptativo para combatir la curva de olvido de conceptos de electrónica y algorítmica.
+          </p>
+        </div>
+
+        <!-- Algorithm Explanation -->
+        <section class="content-section">
+          <h2 class="section-title">El Algoritmo contra la Curva de Olvido</h2>
+          <div class="info-box glass">
+            <p>
+              ¡Hola, Tripulante! Para asegurar que los conceptos clave de nuestra misión se graben en tu memoria a largo plazo y no se evaporen como el agua en la atmósfera marciana, esta aplicación utiliza el <strong>Algoritmo Adaptativo de Repetición Espaciada (SuperMemo-2 modificado)</strong>.
+            </p>
+            <p>
+              Cuando respondes una pregunta, el sistema evalúa tu precisión y tu tiempo de respuesta. Si fallas o dudas, el concepto se clasifica como <em>"inestable"</em> y la aplicación te lo volverá a preguntar en unos minutos. Si aciertas con seguridad, el intervalo de tiempo hasta volver a ver esa pregunta se ampliará (mañana, en 4 días, en una semana). El objetivo es atrapar el conocimiento justo en el momento en que tu cerebro empieza a olvidarlo.
+            </p>
+          </div>
+        </section>
+
+        <!-- Dynamic Question Showcase -->
+        <section class="content-section">
+          <h2 class="section-title">Simulación del Banco de Preguntas Adaptativas</h2>
+          <div class="questions-stack">
+            
+            <!-- Question 1 -->
+            <div class="question-card glass">
+              <div class="card-header-meta">
+                <span class="level-badge mono">[NIVEL_01: CADETE]</span>
+                <span class="topic-tag mono">Electricidad Básica</span>
+              </div>
+              <h3 class="question-title">¿Qué puerto de la placa Arduino Nano proporciona una alimentación constante de 5V de corriente continua?</h3>
+              <div class="options-list">
+                <button class="option-btn mono" data-correct="false">A) Puerto GND</button>
+                <button class="option-btn mono" data-correct="true">B) Puerto 5V</button>
+                <button class="option-btn mono" data-correct="false">C) Puerto analógico A0</button>
+              </div>
+              <div class="feedback-box locked-feedback green-feedback">
+                <strong>[RETROALIMENTACIÓN ADAPTATIVA]</strong><br/>
+                ¡Excelente! El pin 5V suministra voltaje regulado constante. GND es tierra (0V) y A0 lee entradas variables.
+              </div>
+              <div class="feedback-box locked-feedback red-feedback">
+                <strong>[ERROR DETECTADO - BUCLE DE RECUPERACIÓN]</strong><br/>
+                ¡Cuidado! Recuerda que GND es el polo negativo (0V) y A0 sirve para medir lecturas. El pin que alimenta con corriente continua es 5V.
+              </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question-card glass">
+              <div class="card-header-meta">
+                <span class="level-badge mono">[NIVEL_02: ESPECIALISTA]</span>
+                <span class="topic-tag mono">Algorítmica</span>
+              </div>
+              <h3 class="question-title">Si el sensor analógico devuelve valores de 0 (seco) a 1023 (agua), ¿qué umbral representa el 30% de humedad para activar el riego por goteo?</h3>
+              <div class="options-list">
+                <button class="option-btn mono" data-correct="true">A) Por debajo de 307</button>
+                <button class="option-btn mono" data-correct="false">B) Por encima de 307</button>
+                <button class="option-btn mono" data-correct="false">C) Por debajo de 30</button>
+              </div>
+              <div class="feedback-box locked-feedback green-feedback">
+                <strong>[RETROALIMENTACIÓN ADAPTATIVA]</strong><br/>
+                ¡Correcto! 307 equivale aproximadamente al 30% de 1023. Al buscar riego cuando falte agua, se evalúa si es menor (por debajo de).
+              </div>
+              <div class="feedback-box locked-feedback red-feedback">
+                <strong>[ERROR DETECTADO - BUCLE DE RECUPERACIÓN]</strong><br/>
+                Inténtalo de nuevo. Recuerda aplicar la regla de tres (1023 * 0.30 = 307). Para regar en seco, debe caer por debajo de ese umbral.
+              </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question-card glass">
+              <div class="card-header-meta">
+                <span class="level-badge mono">[NIVEL_03: COMANDANTE]</span>
+                <span class="topic-tag mono">Sistemas e Histéresis</span>
+              </div>
+              <h3 class="question-title">Para evitar que el relé de la bomba oscile rápidamente cuando la humedad está en el límite exacto, ¿qué técnica lógica de programación aplicamos?</h3>
+              <div class="options-list">
+                <button class="option-btn mono" data-correct="false">A) Reducir la tensión a 3.3V</button>
+                <button class="option-btn mono" data-correct="true">B) Implementar histéresis (dos umbrales) y un delay</button>
+                <button class="option-btn mono" data-correct="false">C) Aumentar la frecuencia de lectura del sensor</button>
+              </div>
+              <div class="feedback-box locked-feedback green-feedback">
+                <strong>[RETROALIMENTACIÓN ADAPTATIVA]</strong><br/>
+                ¡Perfecto! La histéresis crea un rango estable (encender a 300, apagar a 350) que protege los componentes mecánicos de desgastes rápidos.
+              </div>
+              <div class="feedback-box locked-feedback red-feedback">
+                <strong>[ERROR DETECTADO - BUCLE DE RECUPERACIÓN]</strong><br/>
+                Fallo crítico. La conmutación rápida daña el relé. Debes crear un margen lógico (histéresis) definiendo un umbral de arranque y otro de parada.
+              </div>
+            </div>
+
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <Footer />
+  </div>
+</Layout>
+
+<script>
+  // Simple client-side simulation for the test app
+  document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.question-card');
+    
+    cards.forEach(card => {
+      const buttons = card.querySelectorAll('.option-btn');
+      const greenFeedback = card.querySelector('.green-feedback');
+      const redFeedback = card.querySelector('.red-feedback');
+      
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // Reset states
+          buttons.forEach(b => b.classList.remove('selected-correct', 'selected-incorrect'));
+          greenFeedback.style.display = 'none';
+          redFeedback.style.display = 'none';
+          
+          const isCorrect = btn.getAttribute('data-correct') === 'true';
+          if (isCorrect) {
+            btn.classList.add('selected-correct');
+            greenFeedback.style.display = 'block';
+          } else {
+            btn.classList.add('selected-incorrect');
+            redFeedback.style.display = 'block';
+          }
+        });
+      });
+    });
+  });
+</script>
+
+<style>
+  .site-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .subhub-header {
+    border-bottom: 1px solid hsl(var(--border-color));
+    padding: 1.5rem 0;
+  }
+  
+  .header-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .back-link {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: hsl(var(--text-secondary));
+    text-decoration: none;
+    transition: var(--transition-smooth);
+  }
+  
+  .back-link:hover {
+    color: hsl(var(--accent-primary));
+  }
+  
+  .breadcrumbs {
+    font-size: 0.75rem;
+    color: hsl(var(--text-muted));
+  }
+  
+  .breadcrumbs .active {
+    color: hsl(var(--text-primary));
+    font-weight: 700;
+  }
+  
+  .main-content {
+    flex-grow: 1;
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 3.5rem 2rem;
+  }
+  
+  .resource-article {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+  }
+  
+  .article-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    border-bottom: 1px solid hsl(var(--border-color));
+    padding-bottom: 2rem;
+  }
+  
+  .tag-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 0.25rem 0.65rem;
+    border-radius: 2px;
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  
+  .dot-green {
+    color: hsl(var(--accent-primary));
+    border-color: rgba(0, 255, 65, 0.25);
+  }
+  .dot-green .dot {
+    background-color: hsl(var(--accent-primary));
+  }
+  
+  .article-title {
+    font-size: 2.75rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: hsl(var(--text-primary));
+  }
+  
+  .article-lead {
+    font-size: 1.15rem;
+    line-height: 1.5;
+    color: hsl(var(--text-secondary));
+  }
+  
+  .content-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .section-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: hsl(var(--text-primary));
+    border-left: 2px solid hsl(var(--accent-primary));
+    padding-left: 0.75rem;
+  }
+  
+  .info-box {
+    padding: 2rem;
+    border-radius: 2px;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    color: hsl(var(--text-secondary));
+  }
+  
+  .questions-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .question-card {
+    padding: 2rem;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  
+  .card-header-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+  }
+  
+  .level-badge {
+    color: hsl(var(--accent-tertiary));
+    font-weight: 700;
+  }
+  
+  .topic-tag {
+    color: hsl(var(--text-muted));
+  }
+  
+  .question-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: hsl(var(--text-primary));
+    line-height: 1.4;
+  }
+  
+  .options-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .option-btn {
+    text-align: left;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.85rem;
+    background-color: hsl(var(--bg-secondary));
+    border: 1px solid hsl(var(--border-color));
+    color: hsl(var(--text-primary));
+    cursor: pointer;
+    border-radius: 2px;
+    transition: var(--transition-smooth);
+    outline: none;
+  }
+  
+  .option-btn:hover {
+    border-color: hsl(var(--text-secondary));
+  }
+  
+  .selected-correct {
+    background-color: rgba(0, 255, 65, 0.1) !important;
+    border-color: hsl(var(--accent-primary)) !important;
+    color: #fff !important;
+  }
+  
+  .selected-incorrect {
+    background-color: rgba(239, 68, 68, 0.1) !important;
+    border-color: #ef4444 !important;
+    color: #fff !important;
+  }
+  
+  .feedback-box {
+    display: none;
+    padding: 1.25rem;
+    border-radius: 2px;
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+  
+  .green-feedback {
+    background-color: rgba(0, 255, 65, 0.05);
+    border: 1px solid rgba(0, 255, 65, 0.2);
+    color: hsl(var(--text-primary));
+  }
+  
+  .red-feedback {
+    background-color: rgba(239, 68, 68, 0.05);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    color: hsl(var(--text-primary));
+  }
+  
+  @media (max-width: 768px) {
+    .article-title {
+      font-size: 2rem;
+    }
+  }
+</style>

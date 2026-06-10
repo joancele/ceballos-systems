@@ -1,0 +1,209 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/organisms/Header/Header.astro';
+import HubGrid from '../components/organisms/HubGrid/HubGrid.astro';
+import Footer from '../components/organisms/Footer/Footer.astro';
+
+const hubCards = [
+  {
+    title: 'Portfolio',
+    description: 'Perspectiva completa de trayectoria profesional, arquitectura educativa e hitos de ingeniería de sistemas.',
+    index: '01',
+    href: '#portfolio',
+    actionText: 'VER EXPEDIENTE',
+    disabled: true
+  },
+  {
+    title: 'Proyecto TFM',
+    description: 'Detalles del Trabajo de Fin de Máster: Sistemas de biodomos, modelado ambiental y matrices de control ecológico automatizado.',
+    index: '02',
+    href: import.meta.env.PUBLIC_TFM_URL || '#',
+    actionText: 'ANALIZAR DATOS'
+  },
+  {
+    title: 'Repositorio de Recursos',
+    description: 'Colección curada de artículos académicos, documentación técnica y marcos de diseño de sistemas utilizados en metodologías actuales.',
+    index: '03',
+    href: '#resources',
+    actionText: 'ACCEDER AL ÍNDICE',
+    disabled: true
+  }
+];
+---
+
+<Layout title="CEBALLOS_SYSTEMS | Hub">
+  <div class="site-wrapper">
+    <Header />
+    
+    <main class="main-content">
+      <!-- Monolith Hero Panel -->
+      <section class="hero-container">
+        <div class="hero-panel">
+          <div class="hero-badge mono">
+            [SYS.INIT] // MONOLITO_TERMINAL
+          </div>
+          
+          <h1 class="hero-title">
+            Ingeniería de Ecosistemas de Aprendizaje.
+          </h1>
+          
+          <p class="hero-description">
+            Arquitectura de marcos educativos de alta fidelidad. Fusionando precisión técnica con claridad pedagógica para forjar sistemas resilientes de transferencia de conocimiento.
+          </p>
+          
+          <div class="hero-actions">
+            <a href="#init" class="hero-btn btn btn-outline">
+              Inicializar Secuencia
+              <span class="btn-arrow">→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Section Title -->
+      <section class="section-header">
+        <h2 class="section-title">Módulos del Sistema</h2>
+        <span class="section-badge mono">[03_NODOS]</span>
+      </section>
+      
+      <!-- Grid -->
+      <HubGrid cards={hubCards} />
+    </main>
+    
+    <Footer />
+  </div>
+</Layout>
+
+<style>
+  .site-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .main-content {
+    flex-grow: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 2.5rem 2rem 5rem 2rem;
+  }
+  
+  /* Hero Panel */
+  .hero-container {
+    margin-bottom: 3rem;
+  }
+  
+  .hero-panel {
+    background-color: hsl(var(--bg-secondary));
+    border: 1px solid hsl(var(--border-color));
+    padding: 4rem 3rem;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    position: relative;
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.005) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.005) 1px, transparent 1px);
+    background-size: 30px 30px;
+  }
+  
+  [data-theme="light"] .hero-panel {
+    background-color: hsl(var(--bg-secondary));
+    background-image: 
+      linear-gradient(to right, rgba(0, 0, 0, 0.005) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.005) 1px, transparent 1px);
+  }
+  
+  .hero-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: hsl(var(--accent-primary));
+    background-color: rgba(0, 255, 65, 0.05);
+    padding: 0.35rem 0.75rem;
+    border-radius: 2px;
+    border: 1px solid rgba(0, 255, 65, 0.3);
+  }
+  
+  [data-theme="light"] .hero-badge {
+    color: hsl(var(--accent-primary));
+    background-color: rgba(0, 122, 255, 0.05);
+    border-color: rgba(0, 122, 255, 0.3);
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    max-width: 800px;
+    line-height: 1.15;
+    color: hsl(var(--text-primary));
+  }
+  
+  .hero-description {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: hsl(var(--text-secondary));
+    max-width: 700px;
+  }
+  
+  .hero-actions {
+    margin-top: 1rem;
+  }
+  
+  /* Outline button styling for high contrast in dark mode */
+  .btn-outline {
+    background-color: transparent;
+    color: hsl(var(--text-primary));
+    border: 1px solid hsl(var(--text-primary));
+    padding: 0.75rem 1.75rem;
+  }
+  
+  .btn-outline:hover {
+    background-color: hsl(var(--text-primary));
+    color: hsl(var(--bg-primary));
+  }
+  
+  .btn-arrow {
+    margin-left: 0.5rem;
+    transition: var(--transition-smooth);
+  }
+  
+  .hero-btn:hover .btn-arrow {
+    transform: translateX(4px);
+  }
+  
+  /* Section Header */
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 4rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid hsl(var(--border-color));
+    padding-bottom: 1rem;
+  }
+  
+  .section-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: hsl(var(--text-primary));
+  }
+  
+  .section-badge {
+    font-size: 0.8rem;
+    color: hsl(var(--text-muted));
+  }
+  
+  @media (max-width: 768px) {
+    .hero-panel {
+      padding: 2.5rem 1.75rem;
+    }
+    
+    .hero-title {
+      font-size: 2rem;
+    }
+  }
+</style>

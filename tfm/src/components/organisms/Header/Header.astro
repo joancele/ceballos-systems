@@ -1,0 +1,28 @@
+---
+import './Header.css';
+import ThemeToggle from '../../molecules/ThemeToggle/ThemeToggle.astro';
+---
+
+<header class="main-header glass">
+  <div class="header-container">
+    <a href="/" class="logo">
+      <span class="logo-accent">&lt;</span>
+      JoseCeballos
+      <span class="logo-accent">.link /&gt;</span>
+    </a>
+    
+    <nav class="main-nav">
+      <a href="#" class="nav-link active">Hub</a>
+      <a href="#tfm" class="nav-link">TFM</a>
+      <a href="#portfolio" class="nav-link">Portfolio</a>
+      <a href="#lab" class="nav-link">Lab</a>
+    </nav>
+    
+    <div class="header-actions">
+      <ThemeToggle />
+      <a href="#contact" class="contact-btn">Contacto</a>
+    </div>
+  </div>
+</header>
+
+<script src="./Header.js"></script>

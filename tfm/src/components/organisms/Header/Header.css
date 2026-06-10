@@ -1,0 +1,110 @@
+.main-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: hsl(var(--bg-primary));
+  border-bottom: 1px solid hsl(var(--border-color));
+  transition: var(--transition-smooth);
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.25rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: hsl(var(--accent-primary));
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: var(--transition-smooth);
+}
+
+[data-theme="light"] .logo {
+  color: #000;
+}
+
+.main-nav {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-link {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: hsl(var(--text-secondary));
+  text-decoration: none;
+  padding: 0.25rem 0;
+  position: relative;
+  transition: var(--transition-smooth);
+}
+
+.nav-link:hover, .nav-link.active {
+  color: hsl(var(--text-primary));
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: hsl(var(--accent-primary));
+  transition: var(--transition-smooth);
+}
+
+.nav-link.active::after {
+  width: 100%;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.contact-btn {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #000;
+  background-color: hsl(var(--accent-tertiary)); /* Sand / peach color by default */
+  padding: 0.5rem 1.25rem;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: var(--transition-smooth);
+  border: 1px solid transparent;
+}
+
+[data-theme="dark"] .contact-btn {
+  background-color: #e2f5e9; /* Off-white / light green */
+  color: #000;
+}
+
+[data-theme="light"] .contact-btn {
+  background-color: transparent;
+  border-color: #000;
+  color: #000;
+}
+
+.contact-btn:hover {
+  background-color: hsl(var(--accent-primary));
+  color: #000;
+}
+
+@media (max-width: 768px) {
+  .main-nav {
+    display: none;
+  }
+}

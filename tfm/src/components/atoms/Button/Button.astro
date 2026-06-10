@@ -1,0 +1,25 @@
+---
+import './Button.css';
+
+interface Props {
+  href?: string;
+  variant?: 'primary' | 'secondary' | 'glass';
+  className?: string;
+  id?: string;
+  [key: string]: any;
+}
+
+const { href, variant = 'primary', className = '', id, ...rest } = Astro.props;
+const Element = href ? 'a' : 'button';
+---
+
+<Element 
+  href={href} 
+  id={id} 
+  class={`btn btn-${variant} ${className}`} 
+  {...rest}
+>
+  <slot />
+</Element>
+
+<script src="./Button.js"></script>
