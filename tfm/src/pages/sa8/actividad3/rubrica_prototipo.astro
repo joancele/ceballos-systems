@@ -1,0 +1,329 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Footer from '../../../components/organisms/Footer/Footer.astro';
+---
+
+<Layout title="TFM Recursos | Rúbrica de Evaluación (Actividad 3)">
+  <div class="site-wrapper">
+    <header class="subhub-header">
+      <div class="header-container">
+        <a href="/recursos" class="back-link mono">
+          <span class="arrow">←</span> Volver a Recursos
+        </a>
+        <div class="breadcrumbs mono">
+          <span>Recursos</span> / <span>SA8</span> / <span>Actividad 3</span> / <span class="active">Rúbrica</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <article class="resource-article">
+        <div class="article-header">
+          <div class="tag-badge mono dot-yellow">
+            <span class="dot"></span> EVALUACIÓN PONDERADA
+          </div>
+          <h1 class="article-title">Rúbrica: El Biodomo Inteligente</h1>
+          <p class="article-lead">
+            Matriz de evaluación técnica del prototipo final con ponderación disociada para evitar el efecto polizón.
+          </p>
+        </div>
+
+        <!-- Docent Note -->
+        <section class="content-section">
+          <h2 class="section-title mono">[NOTA_PEDAGÓGICA_DOCENTE]</h2>
+          <div class="log-panel mono info-note">
+            <p><strong>Directriz de Aplicación en el Aula-Taller:</strong></p>
+            <p>
+              Esta rúbrica evalúa el prototipo final del grupo sobre una base de 10 puntos. Sin embargo, para erradicar el efecto polizón, la puntuación de la dimensión asociada al rol del especialista se multiplica por dos para ese alumno, mientras que las demás dimensiones mantienen su peso normal. El alumnado con Dificultades de Aprendizaje (DA) defiende su nota mediante su implicación procedimental en su rol, quedando protegido de los fallos globales del código o de la estructura.
+            </p>
+          </div>
+        </section>
+
+        <!-- Evaluation Table -->
+        <section class="content-section">
+          <h2 class="section-title">Matriz de Evaluación del Prototipo</h2>
+          
+          <div class="table-container">
+            <table class="rubric-table">
+              <thead>
+                <tr>
+                  <th class="col-dim">Dimensión Técnica</th>
+                  <th class="col-insufficient">Insuficiente (1-4)</th>
+                  <th class="col-process">En Proceso (5-6)</th>
+                  <th class="col-competent">Competente (7-8)</th>
+                  <th class="col-excellent">Excelente (9-10)</th>
+                  <th class="col-impact">Impacto por Rol (Corresponsabilidad)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="dim-name">
+                    <strong>Diseño y Tolerancias</strong>
+                    <span class="criteria mono">CE 2.2 / 4.1</span>
+                  </td>
+                  <td>El prototipo no respeta las cotas máximas (20 × 15 × 15 cm). Los componentes se mueven y no se previeron márgenes para el hardware.</td>
+                  <td>Estructura exterior correcta pero el espacio interior está saturado. Los sensores chocan entre sí o dificultan el paso del cableado.</td>
+                  <td>Respeta las cotas y planos iniciales. Sensores y actuadores fijados en posiciones funcionales, dejando margen de 5 mm para seguridad.</td>
+                  <td>Optimización espacial excelente. Distribución limpia que facilita el mantenimiento, la estanqueidad absoluta y la siembra del cultivo.</td>
+                  <td class="role-impact mono">
+                    <strong>Diseñadores:</strong> 50% de su nota.<br/>
+                    <strong>Otros roles:</strong> 25%.
+                  </td>
+                </tr>
+                <tr>
+                  <td class="dim-name">
+                    <strong>Mecanizado e Integración</strong>
+                    <span class="criteria mono">CE 3.1 / 3.2</span>
+                  </td>
+                  <td>Cortes irregulares en maderas o plásticos con errores de tolerancia mayores a ± 5 mm. Juntas abiertas que provocan fugas de agua.</td>
+                  <td>Estructura estable pero acabados deficientes. Orificios de tuberías holgados. La silicona termofusible presenta excesos o rebabas.</td>
+                  <td>Mecanizado limpio con tolerancias menores a ± 2 mm. Estructura estanca que soporta el ciclo de riego sin pérdidas de fluido.</td>
+                  <td>Ensamblaje industrial e impecable. Uso sobresaliente de materiales reciclados. Juntas selladas herméticamente y chasis reforzado.</td>
+                  <td class="role-impact mono">
+                    <strong>Constructores:</strong> 50% de su nota.<br/>
+                    <strong>Otros roles:</strong> 25%.
+                  </td>
+                </tr>
+                <tr>
+                  <td class="dim-name">
+                    <strong>Automatización y Código</strong>
+                    <span class="criteria mono">CE 5.2 / 5.3</span>
+                  </td>
+                  <td>El código no compila en Arduino Nano. La bomba peristáltica no actúa o se queda encendida inundando el sustrato.</td>
+                  <td>El código compila pero presenta fallos lógicos intermitentes. El sensor lee datos analógicos pero el umbral de riego falla por falta de calibración.</td>
+                  <td>Funcionamiento autónomo correcto. La bomba activa el riego solo cuando la humedad baja del 40% durante 3 segundos. Código limpio.</td>
+                  <td>Algoritmo depurado y optimizado con ArduinoBlocks. Monitorización estable en tiempo real y respuesta inmediata del actuador sin retardos.</td>
+                  <td class="role-impact mono">
+                    <strong>Programadores:</strong> 50% de su nota.<br/>
+                    <strong>Otros roles:</strong> 25%.
+                  </td>
+                </tr>
+                <tr>
+                  <td class="dim-name">
+                    <strong>Conexionado y Seguridad</strong>
+                    <span class="criteria mono">CE 2.2 / 3.1</span>
+                  </td>
+                  <td>Cableado caótico con cables sueltos, riesgo inminente de cortocircuito o conexiones directas sin protoboard ni aislamiento.</td>
+                  <td>Circuito funcional pero desordenado. Cables demasiado largos o tensos que dificultan el cierre de la cúpula del biodomo.</td>
+                  <td>Cableado estructurado y ordenado sobre la placa. Conexiones aisladas y componentes electrónicos protegidos de la humedad directa.</td>
+                  <td>Electrónica profesional. Uso de guías o bridas para el cableado, rotulación de pines y aislamiento perfecto frente al entorno hidropónico.</td>
+                  <td class="role-impact mono">
+                    <strong>Todos los Roles:</strong> 25% de la nota para toda la tripulación.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <Footer />
+  </div>
+</Layout>
+
+<style>
+  .site-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .subhub-header {
+    border-bottom: 1px solid hsl(var(--border-color));
+    padding: 1.5rem 0;
+  }
+  
+  .header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .back-link {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: hsl(var(--text-secondary));
+    text-decoration: none;
+    transition: var(--transition-smooth);
+  }
+  
+  .back-link:hover {
+    color: hsl(var(--accent-primary));
+  }
+  
+  .breadcrumbs {
+    font-size: 0.75rem;
+    color: hsl(var(--text-muted));
+  }
+  
+  .breadcrumbs .active {
+    color: hsl(var(--text-primary));
+    font-weight: 700;
+  }
+  
+  .main-content {
+    flex-grow: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 3.5rem 2rem;
+  }
+  
+  .resource-article {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+  }
+  
+  .article-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    border-bottom: 1px solid hsl(var(--border-color));
+    padding-bottom: 2rem;
+  }
+  
+  .tag-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 0.25rem 0.65rem;
+    border-radius: 2px;
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  
+  .dot-yellow {
+    color: #eab308;
+    border-color: rgba(234, 179, 8, 0.25);
+  }
+  .dot-yellow .dot {
+    background-color: #eab308;
+  }
+  
+  .article-title {
+    font-size: 2.75rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: hsl(var(--text-primary));
+  }
+  
+  .article-lead {
+    font-size: 1.15rem;
+    line-height: 1.5;
+    color: hsl(var(--text-secondary));
+  }
+  
+  .content-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .section-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: hsl(var(--text-primary));
+    border-left: 2px solid hsl(var(--accent-primary));
+    padding-left: 0.75rem;
+  }
+  
+  .log-panel {
+    background-color: hsl(var(--bg-secondary));
+    border: 1px solid hsl(var(--border-color));
+    padding: 2rem;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .info-note {
+    border-left: 3px solid #eab308;
+  }
+  
+  /* Rubric Table styling */
+  .table-container {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid hsl(var(--border-color));
+  }
+
+  .rubric-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    text-align: left;
+    min-width: 800px;
+  }
+
+  .rubric-table th, .rubric-table td {
+    padding: 1.25rem;
+    border: 1px solid hsl(var(--border-color));
+    vertical-align: top;
+  }
+
+  .rubric-table th {
+    background-color: hsl(var(--bg-secondary));
+    color: hsl(var(--text-primary));
+    font-weight: 700;
+  }
+
+  .rubric-table td {
+    background-color: hsl(var(--bg-primary));
+    color: hsl(var(--text-secondary));
+  }
+
+  .col-dim { width: 15%; }
+  .col-insufficient { width: 20%; }
+  .col-process { width: 20%; }
+  .col-competent { width: 20%; }
+  .col-excellent { width: 20%; }
+  .col-impact { width: 15%; }
+
+  .dim-name {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .dim-name strong {
+    color: hsl(var(--text-primary));
+    font-size: 0.95rem;
+  }
+
+  .criteria {
+    font-size: 0.75rem;
+    color: hsl(var(--accent-primary));
+  }
+
+  .role-impact {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: hsl(var(--text-primary));
+  }
+  
+  @media (max-width: 768px) {
+    .article-title {
+      font-size: 2rem;
+    }
+  }
+</style>
