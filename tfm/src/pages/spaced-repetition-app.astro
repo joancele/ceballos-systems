@@ -38,81 +38,21 @@ import Footer from '../components/organisms/Footer/Footer.astro';
             </p>
             <p>
               Cuando respondes una pregunta, el sistema evalúa tu precisión y tu tiempo de respuesta. Si fallas o dudas, el concepto se clasifica como <em>"inestable"</em> y la aplicación te lo volverá a preguntar en unos minutos. Si aciertas con seguridad, el intervalo de tiempo hasta volver a ver esa pregunta se ampliará (mañana, en 4 días, en una semana). El objetivo es atrapar el conocimiento justo en el momento en que tu cerebro empieza a olvidarlo.
-            </p>
-          </div>
-        </section>
-
-        <!-- Dynamic Question Showcase -->
+            </p        <!-- CTA to Demonstration -->
         <section class="content-section">
-          <h2 class="section-title">Simulación del Banco de Preguntas Adaptativas</h2>
-          <div class="questions-stack">
-            
-            <!-- Question 1 -->
-            <div class="question-card glass">
-              <div class="card-header-meta">
-                <span class="level-badge mono">[NIVEL_01: CADETE]</span>
-                <span class="topic-tag mono">Electricidad Básica</span>
-              </div>
-              <h3 class="question-title">¿Qué puerto de la placa Arduino Nano proporciona una alimentación constante de 5V de corriente continua?</h3>
-              <div class="options-list">
-                <button class="option-btn mono" data-correct="false">A) Puerto GND</button>
-                <button class="option-btn mono" data-correct="true">B) Puerto 5V</button>
-                <button class="option-btn mono" data-correct="false">C) Puerto analógico A0</button>
-              </div>
-              <div class="feedback-box locked-feedback green-feedback">
-                <strong>[RETROALIMENTACIÓN ADAPTATIVA]</strong><br/>
-                ¡Excelente! El pin 5V suministra voltaje regulado constante. GND es tierra (0V) y A0 lee entradas variables.
-              </div>
-              <div class="feedback-box locked-feedback red-feedback">
-                <strong>[ERROR DETECTADO - BUCLE DE RECUPERACIÓN]</strong><br/>
-                ¡Cuidado! Recuerda que GND es el polo negativo (0V) y A0 sirve para medir lecturas. El pin que alimenta con corriente continua es 5V.
-              </div>
+          <h2 class="section-title">Demostración Práctica</h2>
+          <div class="cta-panel glass">
+            <div class="cta-details">
+              <span class="cta-badge mono">[PROTOTIPO_ACTIVO]</span>
+              <h3 class="cta-title">Probador de Preguntas Adaptativas</h3>
+              <p class="cta-description">
+                Hemos desarrollado una versión interactiva simulada del banco de preguntas adaptativo. Prueba el andamiaje visual, la retroalimentación inmediata y comprueba cómo responde la interfaz ante fallos y aciertos.
+              </p>
             </div>
-
-            <!-- Question 2 -->
-            <div class="question-card glass">
-              <div class="card-header-meta">
-                <span class="level-badge mono">[NIVEL_02: ESPECIALISTA]</span>
-                <span class="topic-tag mono">Algorítmica</span>
-              </div>
-              <h3 class="question-title">Si el sensor analógico devuelve valores de 0 (seco) a 1023 (agua), ¿qué umbral representa el 30% de humedad para activar el riego por goteo?</h3>
-              <div class="options-list">
-                <button class="option-btn mono" data-correct="true">A) Por debajo de 307</button>
-                <button class="option-btn mono" data-correct="false">B) Por encima de 307</button>
-                <button class="option-btn mono" data-correct="false">C) Por debajo de 30</button>
-              </div>
-              <div class="feedback-box locked-feedback green-feedback">
-                <strong>[RETROALIMENTACIÓN ADAPTATIVA]</strong><br/>
-                ¡Correcto! 307 equivale aproximadamente al 30% de 1023. Al buscar riego cuando falte agua, se evalúa si es menor (por debajo de).
-              </div>
-              <div class="feedback-box locked-feedback red-feedback">
-                <strong>[ERROR DETECTADO - BUCLE DE RECUPERACIÓN]</strong><br/>
-                Inténtalo de nuevo. Recuerda aplicar la regla de tres (1023 * 0.30 = 307). Para regar en seco, debe caer por debajo de ese umbral.
-              </div>
-            </div>
-
-            <!-- Question 3 -->
-            <div class="question-card glass">
-              <div class="card-header-meta">
-                <span class="level-badge mono">[NIVEL_03: COMANDANTE]</span>
-                <span class="topic-tag mono">Sistemas e Histéresis</span>
-              </div>
-              <h3 class="question-title">Para evitar que el relé de la bomba oscile rápidamente cuando la humedad está en el límite exacto, ¿qué técnica lógica de programación aplicamos?</h3>
-              <div class="options-list">
-                <button class="option-btn mono" data-correct="false">A) Reducir la tensión a 3.3V</button>
-                <button class="option-btn mono" data-correct="true">B) Implementar histéresis (dos umbrales) y un delay</button>
-                <button class="option-btn mono" data-correct="false">C) Aumentar la frecuencia de lectura del sensor</button>
-              </div>
-              <div class="feedback-box locked-feedback green-feedback">
-                <strong>[RETROALIMENTACIÓN ADAPTATIVA]</strong><br/>
-                ¡Perfecto! La histéresis crea un rango estable (encender a 300, apagar a 350) que protege los componentes mecánicos de desgastes rápidos.
-              </div>
-              <div class="feedback-box locked-feedback red-feedback">
-                <strong>[ERROR DETECTADO - BUCLE DE RECUPERACIÓN]</strong><br/>
-                Fallo crítico. La conmutación rápida daña el relé. Debes crear un margen lógico (histéresis) definiendo un umbral de arranque y otro de parada.
-              </div>
-            </div>
-
+            <a href="/spaced-repetition-app/demostracion" class="btn btn-outline cta-btn">
+              Iniciar Demostración
+              <span class="btn-arrow">→</span>
+            </a>
           </div>
         </section>
       </article>
@@ -121,37 +61,6 @@ import Footer from '../components/organisms/Footer/Footer.astro';
     <Footer />
   </div>
 </Layout>
-
-<script>
-  // Simple client-side simulation for the test app
-  document.addEventListener('DOMContentLoaded', () => {
-    const cards = document.querySelectorAll('.question-card');
-    
-    cards.forEach(card => {
-      const buttons = card.querySelectorAll('.option-btn');
-      const greenFeedback = card.querySelector('.green-feedback');
-      const redFeedback = card.querySelector('.red-feedback');
-      
-      buttons.forEach(btn => {
-        btn.addEventListener('click', () => {
-          // Reset states
-          buttons.forEach(b => b.classList.remove('selected-correct', 'selected-incorrect'));
-          greenFeedback.style.display = 'none';
-          redFeedback.style.display = 'none';
-          
-          const isCorrect = btn.getAttribute('data-correct') === 'true';
-          if (isCorrect) {
-            btn.classList.add('selected-correct');
-            greenFeedback.style.display = 'block';
-          } else {
-            btn.classList.add('selected-incorrect');
-            redFeedback.style.display = 'block';
-          }
-        });
-      });
-    });
-  });
-</script>
 
 <style>
   .site-wrapper {
@@ -283,101 +192,65 @@ import Footer from '../components/organisms/Footer/Footer.astro';
     gap: 1rem;
     color: hsl(var(--text-secondary));
   }
-  
-  .questions-stack {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-  
-  .question-card {
-    padding: 2rem;
-    border-radius: 2px;
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-  }
-  
-  .card-header-meta {
+
+  /* CTA Panel Styles */
+  .cta-panel {
     display: flex;
     justify-content: space-between;
-    font-size: 0.75rem;
+    align-items: center;
+    padding: 2.5rem;
+    border-radius: 2px;
+    gap: 2rem;
   }
-  
-  .level-badge {
-    color: hsl(var(--accent-tertiary));
-    font-weight: 700;
-  }
-  
-  .topic-tag {
-    color: hsl(var(--text-muted));
-  }
-  
-  .question-title {
-    font-size: 1.15rem;
-    font-weight: 600;
-    color: hsl(var(--text-primary));
-    line-height: 1.4;
-  }
-  
-  .options-list {
+
+  .cta-details {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+    max-width: 600px;
   }
-  
-  .option-btn {
-    text-align: left;
-    padding: 0.75rem 1.25rem;
-    font-size: 0.85rem;
-    background-color: hsl(var(--bg-secondary));
-    border: 1px solid hsl(var(--border-color));
+
+  .cta-badge {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: hsl(var(--accent-primary));
+  }
+
+  .cta-title {
+    font-size: 1.35rem;
+    font-weight: 700;
     color: hsl(var(--text-primary));
-    cursor: pointer;
-    border-radius: 2px;
-    transition: var(--transition-smooth);
-    outline: none;
   }
-  
-  .option-btn:hover {
-    border-color: hsl(var(--text-secondary));
-  }
-  
-  .selected-correct {
-    background-color: rgba(0, 255, 65, 0.1) !important;
-    border-color: hsl(var(--accent-primary)) !important;
-    color: #fff !important;
-  }
-  
-  .selected-incorrect {
-    background-color: rgba(239, 68, 68, 0.1) !important;
-    border-color: #ef4444 !important;
-    color: #fff !important;
-  }
-  
-  .feedback-box {
-    display: none;
-    padding: 1.25rem;
-    border-radius: 2px;
-    font-size: 0.85rem;
+
+  .cta-description {
+    font-size: 0.95rem;
     line-height: 1.5;
+    color: hsl(var(--text-secondary));
   }
-  
-  .green-feedback {
-    background-color: rgba(0, 255, 65, 0.05);
-    border: 1px solid rgba(0, 255, 65, 0.2);
-    color: hsl(var(--text-primary));
+
+  .cta-btn {
+    flex-shrink: 0;
+    padding: 0.75rem 1.5rem;
   }
-  
-  .red-feedback {
-    background-color: rgba(239, 68, 68, 0.05);
-    border: 1px solid rgba(239, 68, 68, 0.2);
-    color: hsl(var(--text-primary));
+
+  .btn-arrow {
+    margin-left: 0.5rem;
+    display: inline-block;
+    transition: transform 0.2s ease;
+  }
+
+  .cta-btn:hover .btn-arrow {
+    transform: translateX(4px);
   }
   
   @media (max-width: 768px) {
     .article-title {
       font-size: 2rem;
+    }
+    .cta-panel {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1.75rem;
     }
   }
 </style>
