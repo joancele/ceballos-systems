@@ -1,47 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ThemeToggle from '../components/molecules/ThemeToggle/ThemeToggle.astro';
-import HubGrid from '../components/organisms/HubGrid/HubGrid.astro';
-
-const tfmCards = [
-  {
-    title: 'Portal de la Academia (Fichas Jigsaw)',
-    description: 'Acceso a las fichas de especialización técnica individuales por roles (Diseño CAD, Programación/Debugging y Construcción/PRL) para el minireto.',
-    index: '01',
-    href: '/toolbox/sa8/actividad2',
-    actionText: 'Ver Especialidades',
-    dotTag: { text: 'FICHAS JIGSAW', colorClass: 'dot-purple' }
-  },
-  {
-    title: 'App de Test: Repetición Espaciada',
-    description: 'Prototipo de la aplicación interactiva que dosifica preguntas teóricas personalizadas según la curva de olvido y el progreso del alumno.',
-    index: '02',
-    href: '/spaced-repetition-app',
-    actionText: 'Probar Aplicación',
-    dotTag: { text: 'INSTRUCCIÓN ADAPTATIVA', colorClass: 'dot-green' }
-  },
-  {
-    title: 'Rúbricas y Dianas del Proyecto',
-    description: 'Desglose de la rúbrica técnica del prototipo Maker con doble puntuación por rol, dianas de coevaluación y listas de cotejo diarias.',
-    index: '03',
-    href: '/rubricas-dianas',
-    actionText: 'Descargar Rúbricas',
-    dotTag: { text: 'HERRAMIENTAS DE EVALUACIÓN', colorClass: 'dot-yellow' }
-  },
-  {
-    title: 'Cuadro de Mando de Calificación',
-    description: 'Plantilla operativa para la triangulación de notas de la SA, aplicando la ponderación legal LOMLOE y los criterios de evaluación disociada.',
-    index: '04',
-    href: '/cuadro-mando',
-    actionText: 'Abrir Calificador',
-    dotTag: { text: 'ANALÍTICA DE DATOS', colorClass: 'dot-white' }
-  }
-];
+import Footer from '../components/organisms/Footer/Footer.astro';
 
 const hubUrl = import.meta.env.PUBLIC_HUB_URL || 'https://joseceballos.link';
 ---
 
-<Layout title="CEBALLOS_SYSTEMS | Recursos TFM">
+<Layout title="CEBALLOS_SYSTEMS | Proyecto TFM">
   <div class="site-wrapper">
     <!-- Sub-Hub Custom Header -->
     <header class="subhub-header">
@@ -51,7 +16,7 @@ const hubUrl = import.meta.env.PUBLIC_HUB_URL || 'https://joseceballos.link';
         </a>
         
         <div class="breadcrumbs mono">
-          <span>Inicio</span> / <span>TFM</span> / <span class="active">Recursos</span>
+          <span>Inicio</span> / <span class="active">TFM</span>
         </div>
         
         <div class="toggle-container">
@@ -63,32 +28,71 @@ const hubUrl = import.meta.env.PUBLIC_HUB_URL || 'https://joseceballos.link';
     <main class="main-content">
       <!-- Title Section -->
       <section class="title-section">
+        <div class="project-badge mono">[PROYECTO_TFM]</div>
         <h1 class="page-title">
-          Recursos Didácticos de la SA
+          El Invernadero Automatizado
         </h1>
         <p class="page-subtitle">
-          Ecosistema de materiales, herramientas de evaluación y analíticas diseñadas para la unidad El Invernadero Automatizado.
+          Diseño e implementación de un Biodomo Inteligente enmarcado en la narrativa gamificada "Misión a Marte" para Tecnología y Digitalización.
         </p>
       </section>
       
-      <!-- Grid of TFM cards -->
-      <HubGrid cards={tfmCards} />
-    </main>
-    
-    <!-- Footer in Swiss Monolith style -->
-    <footer class="main-footer">
-      <div class="footer-container">
-        <div class="footer-left">
-          <span class="brand mono">Systems Educator</span>
-          <p class="copyright mono">&copy; 2024 Systems Educator. Built with architectural precision.</p>
+      <!-- Core Info Panel -->
+      <div class="grid-layout">
+        <!-- Presentation Column -->
+        <div class="info-column">
+          <section class="text-section card glass">
+            <h2 class="section-heading mono">// PRESENTACIÓN DEL PROYECTO</h2>
+            <p>
+              Este proyecto de Trabajo Fin de Máster (TFM) propone una arquitectura pedagógica completa para la materia de Tecnología y Digitalización en Educación Secundaria. A través del diseño y construcción cooperativa de un invernadero automatizado con Arduino, los alumnos adquieren habilidades clave en pensamiento computacional, electrónica analógica y cultura maker.
+            </p>
+            <p>
+              La unidad está contextualizada bajo la narrativa inmersiva <strong>"Misión a Marte"</strong>, donde cada tripulación tiene la responsabilidad de programar y construir los sistemas de soporte vital hídrico de su propia base espacial (Base Ares-V), estableciendo puentes de transferencia de conocimiento constantes con problemáticas del mundo real (Doñana).
+            </p>
+          </section>
+
+          <section class="text-section card glass">
+            <h2 class="section-heading mono">// PILARES METODOLÓGICOS</h2>
+            <ul class="pillars-list">
+              <li>
+                <strong>Cultura del Error:</strong> Desestigmatización del fallo técnico a través de dinámicas de depuración dirigida (debugging). Los bugs no son fracasos; son hitos de aprendizaje.
+              </li>
+              <li>
+                <strong>Coeducación Líquida:</strong> Erradicación de los sesgos de género mediante cartas de rol líquidas (Diseño, Programación, Construcción) que rotan periódicamente.
+              </li>
+              <li>
+                <strong>Evaluación Disociada:</strong> Separación metodológica del esfuerzo/procesos frente a la precisión puramente técnica para garantizar una evaluación inclusiva (DUA).
+              </li>
+            </ul>
+          </section>
         </div>
-        <div class="footer-links mono">
-          <a href="#privacy" class="footer-link">Privacy</a>
-          <a href="#terms" class="footer-link">Terms</a>
-          <a href="#archive" class="footer-link">Archive {`{GH}[IN]`}</a>
+
+        <!-- CTA & Repository Column -->
+        <div class="cta-column">
+          <div class="cta-card border-accent highlight-panel">
+            <span class="cta-badge mono">[ACCESO_REPOSITORIO]</span>
+            <h2 class="cta-card-title">Recursos Didácticos</h2>
+            <p class="cta-card-desc">
+              Accede al repositorio completo de recursos y prototipos interactivos diseñados para la defensa y despliegue del proyecto.
+            </p>
+            
+            <div class="card-bullets mono">
+              <span>-> Portal de la Academia (Jigsaw)</span>
+              <span>-> App de Test (Repetición Espaciada)</span>
+              <span>-> Rúbricas y Dianas del Proyecto</span>
+              <span>-> Cuadro de Mando de Calificación</span>
+            </div>
+
+            <a href="/recursos" class="btn btn-outline cta-btn">
+              Explorar Recursos
+              <span class="btn-arrow">→</span>
+            </a>
+          </div>
         </div>
       </div>
-    </footer>
+    </main>
+    
+    <Footer />
   </div>
 </Layout>
 
@@ -160,17 +164,30 @@ const hubUrl = import.meta.env.PUBLIC_HUB_URL || 'https://joseceballos.link';
     margin: 0 auto;
     width: 100%;
     padding: 3.5rem 2rem 5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
   }
   
   .title-section {
-    margin-bottom: 3.5rem;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  
+  .project-badge {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: hsl(var(--accent-primary));
+    border: 1px solid rgba(0, 255, 65, 0.3);
+    background-color: rgba(0, 255, 65, 0.03);
+    padding: 0.25rem 0.5rem;
+    border-radius: 2px;
   }
   
   .page-title {
-    font-size: 3.25rem;
+    font-size: 3.5rem;
     font-weight: 700;
     letter-spacing: -0.02em;
     color: hsl(var(--text-primary));
@@ -178,76 +195,157 @@ const hubUrl = import.meta.env.PUBLIC_HUB_URL || 'https://joseceballos.link';
   }
   
   .page-subtitle {
-    font-size: 1.15rem;
-    line-height: 1.6;
+    font-size: 1.25rem;
+    line-height: 1.5;
     color: hsl(var(--text-secondary));
-    max-width: 800px;
+    max-width: 900px;
   }
-  
-  /* Footer Custom style */
-  .main-footer {
-    border-top: 1px solid hsl(var(--border-color));
-    padding: 2.5rem 0;
-    width: 100%;
-    margin-top: 5rem;
+
+  /* Grid Layout */
+  .grid-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 2rem;
   }
-  
-  .footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .footer-left {
+
+  .info-column {
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
+    gap: 2rem;
   }
-  
-  .brand {
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: hsl(var(--accent-primary)); /* Green */
+
+  .card {
+    padding: 2.5rem;
+    border-radius: 2px;
   }
-  
-  .copyright {
-    font-size: 0.75rem;
-    color: hsl(var(--text-muted));
-  }
-  
-  .footer-links {
+
+  .text-section {
     display: flex;
-    gap: 1.5rem;
+    flex-direction: column;
+    gap: 1.25rem;
+    line-height: 1.6;
+    font-size: 1rem;
+    color: hsl(var(--text-secondary));
   }
-  
-  .footer-link {
-    font-size: 0.75rem;
-    color: hsl(var(--text-muted));
-    text-decoration: none;
-    transition: var(--transition-smooth);
-  }
-  
-  .footer-link:hover {
+
+  .text-section p strong {
     color: hsl(var(--text-primary));
   }
+
+  .section-heading {
+    font-size: 0.85rem;
+    color: hsl(var(--text-muted));
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid hsl(var(--border-color));
+    padding-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .pillars-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .pillars-list li {
+    position: relative;
+    padding-left: 1.5rem;
+  }
+
+  .pillars-list li::before {
+    content: "::";
+    position: absolute;
+    left: 0;
+    color: hsl(var(--accent-primary));
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+  }
+
+  /* CTA Panel Styles */
+  .cta-column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cta-card {
+    background-color: hsl(var(--bg-secondary));
+    border-radius: 2px;
+    padding: 3rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    height: 100%;
+    justify-content: center;
+  }
+
+  .highlight-panel {
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.005) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.005) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  .border-accent {
+    border: 1px solid hsl(var(--border-color));
+  }
+
+  .cta-badge {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: hsl(var(--accent-primary));
+  }
+
+  .cta-card-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: hsl(var(--text-primary));
+  }
+
+  .cta-card-desc {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: hsl(var(--text-secondary));
+  }
+
+  .card-bullets {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    color: hsl(var(--text-muted));
+    border-top: 1px dashed hsl(var(--border-color));
+    border-bottom: 1px dashed hsl(var(--border-color));
+    padding: 1rem 0;
+  }
+
+  .cta-btn {
+    align-self: flex-start;
+    padding: 0.85rem 1.75rem;
+  }
+
+  .btn-arrow {
+    margin-left: 0.5rem;
+    display: inline-block;
+    transition: transform 0.2s ease;
+  }
+
+  .cta-btn:hover .btn-arrow {
+    transform: translateX(4px);
+  }
   
+  @media (max-width: 992px) {
+    .grid-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+
   @media (max-width: 768px) {
-    .header-container {
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-    
-    .footer-container {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 1.5rem;
-    }
-    
     .page-title {
-      font-size: 2.25rem;
+      font-size: 2.5rem;
+    }
+    .cta-card {
+      padding: 2rem;
     }
   }
 </style>
