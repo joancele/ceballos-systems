@@ -1,0 +1,410 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/organisms/Footer/Footer.astro';
+---
+
+<Layout title="TFM Recursos | Portal de la Academia (Actividad 2)">
+  <div class="site-wrapper">
+    <header class="subhub-header">
+      <div class="header-container">
+        <a href="/#" class="back-link mono">
+          <span class="arrow">←</span> Volver a Recursos
+        </a>
+        <div class="breadcrumbs mono">
+          <span>Recursos</span> / <span class="active">Academia Jigsaw</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <article class="resource-article">
+        <div class="article-header">
+          <div class="tag-badge mono dot-purple">
+            <span class="dot"></span> TRABAJO COLABORATIVO (JIGSAW)
+          </div>
+          <h1 class="article-title">Portal de la Academia: Especialización</h1>
+          <p class="article-lead">
+            Fichas de misión individuales y andamiaje metodológico para la Actividad 2 "División por Especialidades".
+          </p>
+        </div>
+
+        <!-- Narrative Briefing -->
+        <section class="content-section">
+          <h2 class="section-title mono">[02_DIRECTRIZ_DEL_DIRECTOR]</h2>
+          <div class="log-panel mono">
+            <p class="log-header">*** TRANSMISIÓN ENTRANTE - DIRECTOR DE MISIÓN ***</p>
+            <p class="log-body">
+              "Las tripulaciones se separan temporalmente. Para que el Biodomo Inteligente funcione, necesitamos ciencia pura y especialización. Cada tripulante entra hoy en una Academia de Élite. Tu responsabilidad individual es dominar tu área y regresar a tu equipo base preparado para liderar el ensamblaje. Si tú fallas, tu tripulación se queda sin recursos en Marte."
+            </p>
+            <p class="log-footer">*** FIN DE TRANSMISIÓN ***</p>
+          </div>
+        </section>
+
+        <!-- The Academies Grid -->
+        <section class="content-section">
+          <h2 class="section-title">Fichas de Misión por Academia</h2>
+          
+          <div class="academies-stack">
+            <!-- Academy 1 -->
+            <div class="academy-card glass">
+              <div class="academy-header">
+                <span class="academy-index mono">[01]</span>
+                <div>
+                  <h3 class="academy-title">Academia de Diseño</h3>
+                  <span class="academy-subtitle">Especialistas en CAD y Espacio</span>
+                </div>
+              </div>
+              <div class="academy-meta mono">
+                <span>Misión: Optimización Espacial y Planimetría del Biodomo</span>
+                <span>Entorno: Tinkercad / LibreCAD</span>
+              </div>
+              <div class="academy-content">
+                <div class="challenge-box">
+                  <strong class="mono">EL MINIRETO:</strong>
+                  <p>El espacio en la base marciana es crítico. Debes diseñar una cúpula estanca que albergue el cultivo hidropónico optimizando el volumen. El chasis físico final se construirá con una caja de policarbonato reciclado de 20 × 15 × 15 cm.</p>
+                </div>
+                <div class="steps-box">
+                  <strong class="mono">INSTRUCCIONES TÉCNICAS PASO A PASO:</strong>
+                  <ol class="step-list">
+                    <li><strong>Análisis de Tolerancias:</strong> Entra en Tinkercad y modela un prisma con las medidas máximas de la caja real del taller.</li>
+                    <li><strong>Ubicación del Hardware:</strong> Modela cilindros ciegos que simulen la posición de la minibomba peristáltica y el sensor de humedad de suelo (YL-69), dejando un margen de seguridad de 5 mm para evitar cortocircuitos por humedad.</li>
+                    <li><strong>Planimetría:</strong> Exporta las vistas del modelo (planta, alzado y perfil) a formato técnico acotado para entregárselo al Constructor de tu equipo.</li>
+                  </ol>
+                </div>
+                <div class="success-box border-accent">
+                  <strong class="mono text-accent">CRITERIO DE ÉXITO:</strong>
+                  <p>El diseño final en Tinkercad debe respetar las cotas reales y prever una ventana de ventilación superior practicable sin debilitar la estructura general del chasis.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Academy 2 -->
+            <div class="academy-card glass">
+              <div class="academy-header">
+                <span class="academy-index mono">[02]</span>
+                <div>
+                  <h3 class="academy-title">Academia de Programación</h3>
+                  <span class="academy-subtitle">Especialistas en Lógica y Algorítmica</span>
+                </div>
+              </div>
+              <div class="academy-meta mono">
+                <span>Misión: Debugging y Calibración del Sistema de Control</span>
+                <span>Entorno: ArduinoBlocks / Placa Arduino Nano</span>
+              </div>
+              <div class="academy-content">
+                <div class="challenge-box">
+                  <strong class="mono">EL MINIRETO (CULTURA DEL ERROR):</strong>
+                  <p>El software base de control de la bomba de agua ha sufrido una alteración de datos por la tormenta solar (contiene bugs provocados). El código no compila y la bomba se queda encendida indefinidamente, inundando las raíces. Debes encontrar los errores lógicos, depurarlos y calibrar el sensor.</p>
+                </div>
+                <div class="steps-box">
+                  <strong class="mono">INSTRUCCIONES TÉCNICAS PASO A PASO:</strong>
+                  <ol class="step-list">
+                    <li><strong>Caza del Bug:</strong> Abre el archivo <code>Mision_Marte_Invernadero_BUG.ab</code> en ArduinoBlocks. Revisa los bloques de la estructura condicional SI... ENTONCES. <em>(Pista: El sensor lee en analógico de 0 a 1023, pero la variable de comparación está configurada erróneamente en formato booleano).</em></li>
+                    <li><strong>Calibración del Sensor:</strong> Conecta el sensor de humedad de suelo a tu placa. Mide el valor en seco (aire) y el valor en húmedo (vaso de agua). Anota el umbral crítico de riego en tu informe técnico.</li>
+                    <li><strong>Inyección del Código:</strong> Corrige los bloques para que la bomba solo actúe durante 3 segundos cuando la humedad baje del 40%.</li>
+                  </ol>
+                </div>
+                <div class="success-box border-accent">
+                  <strong class="mono text-accent">CRITERIO DE ÉXITO:</strong>
+                  <p>El algoritmo corregido debe compilar a la primera y el monitor serie de ArduinoBlocks debe mostrar lecturas estables del sensor ambiental en tiempo real.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Academy 3 -->
+            <div class="academy-card glass">
+              <div class="academy-header">
+                <span class="academy-index mono">[03]</span>
+                <div>
+                  <h3 class="academy-title">Academia de Construcción</h3>
+                  <span class="academy-subtitle">Especialistas en Mecanizado y Seguridad</span>
+                </div>
+              </div>
+              <div class="academy-meta mono">
+                <span>Misión: Mecanizado Seguro de la Infraestructura Estanca</span>
+                <span>Entorno: Aula-Taller Maker (Banco de Trabajo)</span>
+              </div>
+              <div class="academy-content">
+                <div class="challenge-box">
+                  <strong class="mono">EL MINIRETO:</strong>
+                  <p>Eres el responsable de la integridad física de la tripulación. Debes recibir los planos de los Diseñadores y preparar los materiales reciclados (maderas y plásticos) realizando los cortes y perforaciones para el paso de tuberías y cableado, aplicando de forma estricta el protocolo de prevención de riesgos.</p>
+                </div>
+                <div class="steps-box">
+                  <strong class="mono">INSTRUCCIONES TÉCNICAS PASO A PASO:</strong>
+                  <ol class="step-list">
+                    <li><strong>Marcado y Trazado:</strong> Utiliza la escuadra metálica y el punzón para trasladar las medidas del plano del diseñador sobre la plancha de plástico reciclado.</li>
+                    <li><strong>Mecanizado con Seguridad:</strong> Fija la pieza firmemente al banco de trabajo usando gatos o sargentos. Utiliza la barrena manual o el taladro de columna (bajo supervisión) para realizar el orificio de paso de la tubería de la bomba peristáltica (diámetro exacto de 6 mm).</li>
+                    <li><strong>Auditoría PRL:</strong> Antes de usar la pistola de silicona termofusible para asegurar la estanqueidad de las juntas, verifica que dispones de guantes de protección térmica y gafas de seguridad en tu isla de trabajo.</li>
+                  </ol>
+                </div>
+                <div class="success-box border-accent">
+                  <strong class="mono text-accent">CRITERIO DE ÉXITO:</strong>
+                  <p>Las piezas cortadas y perforadas deben encajar con un error menor a ± 2 mm respecto al plano original, manteniendo la mesa limpia y libre de residuos al terminar.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <Footer />
+  </div>
+</Layout>
+
+<style>
+  .site-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .subhub-header {
+    border-bottom: 1px solid hsl(var(--border-color));
+    padding: 1.5rem 0;
+  }
+  
+  .header-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .back-link {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: hsl(var(--text-secondary));
+    text-decoration: none;
+    transition: var(--transition-smooth);
+  }
+  
+  .back-link:hover {
+    color: hsl(var(--accent-primary));
+  }
+  
+  .breadcrumbs {
+    font-size: 0.75rem;
+    color: hsl(var(--text-muted));
+  }
+  
+  .breadcrumbs .active {
+    color: hsl(var(--text-primary));
+    font-weight: 700;
+  }
+  
+  .main-content {
+    flex-grow: 1;
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 3.5rem 2rem;
+  }
+  
+  .resource-article {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+  }
+  
+  .article-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    border-bottom: 1px solid hsl(var(--border-color));
+    padding-bottom: 2rem;
+  }
+  
+  .tag-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 0.25rem 0.65rem;
+    border-radius: 2px;
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  
+  .dot-purple {
+    color: #a855f7;
+    border-color: rgba(168, 85, 247, 0.25);
+  }
+  .dot-purple .dot {
+    background-color: #a855f7;
+  }
+  
+  .article-title {
+    font-size: 2.75rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: hsl(var(--text-primary));
+  }
+  
+  .article-lead {
+    font-size: 1.15rem;
+    line-height: 1.5;
+    color: hsl(var(--text-secondary));
+  }
+  
+  .content-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .section-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: hsl(var(--text-primary));
+    border-left: 2px solid hsl(var(--accent-primary));
+    padding-left: 0.75rem;
+  }
+  
+  .log-panel {
+    background-color: hsl(var(--bg-secondary));
+    border: 1px solid hsl(var(--border-color));
+    padding: 2rem;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  
+  .log-header {
+    color: hsl(var(--accent-primary));
+    font-weight: 700;
+  }
+  
+  .log-footer {
+    color: hsl(var(--text-muted));
+  }
+
+  .academies-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .academy-card {
+    padding: 2.25rem;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .academy-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .academy-index {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: hsl(var(--accent-primary));
+    margin-top: 0.15rem;
+  }
+
+  .academy-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: hsl(var(--text-primary));
+  }
+
+  .academy-subtitle {
+    font-size: 0.85rem;
+    color: hsl(var(--text-muted));
+    display: block;
+    margin-top: 0.25rem;
+  }
+
+  .academy-meta {
+    font-size: 0.75rem;
+    color: hsl(var(--text-secondary));
+    border-top: 1px dashed hsl(var(--border-color));
+    border-bottom: 1px dashed hsl(var(--border-color));
+    padding: 0.75rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .academy-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .challenge-box, .steps-box, .success-box {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .challenge-box strong, .steps-box strong, .success-box strong {
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    color: hsl(var(--text-muted));
+  }
+
+  .step-list {
+    padding-left: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .step-list li {
+    font-size: 0.95rem;
+  }
+
+  .step-list code {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    background-color: hsl(var(--bg-secondary));
+    padding: 0.1rem 0.35rem;
+    border-radius: 2px;
+    border: 1px solid hsl(var(--border-color));
+  }
+
+  .success-box {
+    background-color: rgba(0, 255, 65, 0.02);
+    padding: 1.25rem;
+    border-radius: 2px;
+  }
+
+  .border-accent {
+    border: 1px solid rgba(0, 255, 65, 0.2);
+  }
+
+  .text-accent {
+    color: hsl(var(--accent-primary)) !important;
+  }
+  
+  @media (max-width: 768px) {
+    .academy-card {
+      padding: 1.5rem;
+    }
+    .article-title {
+      font-size: 2rem;
+    }
+  }
+</style>
