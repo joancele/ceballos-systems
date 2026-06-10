@@ -10,7 +10,7 @@ const { title, description = "Recursos y Portfolio de Jose Ceballos - TFM, Educa
 ---
 
 <!doctype html>
-<html lang="es" data-theme="dark">
+<html lang="es" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
@@ -33,12 +33,12 @@ const { title, description = "Recursos y Portfolio de Jose Ceballos - TFM, Educa
       // Initialize theme from localStorage or system preferences
       const theme = (() => {
         if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-          return localStorage.getItem('theme') || 'dark';
+          return localStorage.getItem('theme') || 'light';
         }
-        if (window.matchMedia('(prefers-color-scheme: light)').matches) {
-          return 'light';
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          return 'dark';
         }
-        return 'dark';
+        return 'light';
       })();
       
       document.documentElement.setAttribute('data-theme', theme);
