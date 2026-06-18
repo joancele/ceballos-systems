@@ -1,0 +1,165 @@
+/* RetosBlock Styles */
+
+/* LOCK SYSTEM */
+.locked-section {
+  position: relative;
+  pointer-events: none;
+  user-select: none;
+}
+
+.locked-section > *:not(.lock-overlay) {
+  opacity: 0.15 !important;
+  filter: blur(4px) grayscale(0.8) !important;
+}
+
+.lock-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(18, 18, 18, 0.4);
+  border-radius: 4px;
+  padding: 2rem;
+  text-align: center;
+  pointer-events: auto;
+}
+
+.lock-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: hsl(var(--text-secondary));
+  max-width: 450px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* PROGRESS PANEL */
+.challenges-progress-panel {
+  padding: 1.5rem;
+  border-radius: 4px;
+  border: 1px dashed rgba(var(--develop-accent-rgb), 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.challenges-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.challenge-item {
+  padding: 1rem 1.25rem;
+}
+
+/* PROGRESS BAR COMMON */
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: hsl(var(--text-muted));
+}
+
+.progress-track {
+  width: 100%;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.bar-develop {
+  background-color: var(--develop-accent);
+}
+
+/* CERTIFICATION PANEL */
+.certification-panel {
+  margin-top: 1.5rem;
+  border-top: 1px dashed hsl(var(--border-color));
+  padding-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.border-develop-dim {
+  border-top: 1px dashed rgba(var(--develop-accent-rgb), 0.2);
+}
+
+.cert-status-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
+.cert-indicator {
+  font-weight: 700;
+}
+
+.text-danger {
+  color: #ff3b30;
+}
+
+.text-success {
+  color: var(--develop-accent);
+}
+
+.btn-certify {
+  width: 100%;
+  padding: 0.85rem;
+  border: none;
+  border-radius: 4px;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  background-color: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.25);
+  cursor: not-allowed;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.btn-certify:enabled {
+  cursor: pointer;
+}
+
+.btn-develop-glow:enabled {
+  background-color: rgba(var(--develop-accent-rgb), 0.1);
+  color: var(--develop-accent);
+  border-color: rgba(var(--develop-accent-rgb), 0.4);
+}
+
+.btn-develop-glow:enabled:hover {
+  background-color: var(--develop-accent);
+  color: #121212;
+  box-shadow: 0 0 15px rgba(var(--develop-accent-rgb), 0.4);
+}
+
+.console-terminal-log {
+  background-color: hsl(var(--bg-primary));
+  border: 1px solid hsl(var(--border-color));
+  border-radius: 4px;
+  padding: 0.75rem 1rem;
+  font-size: 0.75rem;
+  color: hsl(var(--text-muted));
+  min-height: 50px;
+  max-height: 90px;
+  overflow-y: auto;
+  line-height: 1.5;
+}

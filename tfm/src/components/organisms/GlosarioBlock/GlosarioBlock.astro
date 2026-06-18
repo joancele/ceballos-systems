@@ -1,0 +1,84 @@
+---
+import './GlosarioBlock.css';
+---
+
+<section class="academy-section glass border-develop" id="dev-block-glosario">
+  <div class="section-badge mono text-develop">🟪 BLOQUE 4: Glosario Interactivo</div>
+  <h2 class="section-title">Diccionario Técnico de Emergencia</h2>
+  
+  <div class="glosario-list">
+    <div class="glosario-card glass" id="glosario-card-actuacion-potencia">
+      <h4 class="mono" id="glosario-actuacion-potencia">Actuación de Potencia</h4>
+      <p>Dispositivo o circuito que permite a un microcontrolador de baja potencia (como Arduino, que opera a 5V) controlar cargas eléctricas de alta tensión o corriente (como motores o tiras LED de 12V) de forma segura, aislando ambas etapas eléctricas.</p>
+    </div>
+
+    <div class="glosario-card glass" id="glosario-card-algoritmo">
+      <h4 class="mono" id="glosario-algoritmo">Algoritmo</h4>
+      <p>Secuencia ordenada, finita y lógica de instrucciones o pasos matemáticos que el microcontrolador del biodomo ejecuta de forma cíclica para resolver un problema (por ejemplo, decidir cuándo activar el riego basándose en los datos de los sensores).</p>
+    </div>
+
+    <div class="glosario-card glass" id="glosario-card-arduinoblocks">
+      <h4 class="mono" id="glosario-arduinoblocks">ArduinoBlocks</h4>
+      <p>Entorno de programación visual optimizado para educación que traduce una estructura de bloques gráficos modulares (tipo puzle) a código fuente puro en C++, facilitando el aprendizaje de la lógica algorítmica sin la barrera de la sintaxis del código escrito.</p>
+    </div>
+
+    <div class="glosario-card glass" id="glosario-card-depuracion">
+      <h4 class="mono" id="glosario-depuracion">Depuración (Debugging)</h4>
+      <p>Proceso sistemático de identificar, aislar y corregir errores lógicos o de sintaxis (bugs) en el software o fallos de conexión en el hardware. En esta SA, se aborda bajo la "cultura del error" como una herramienta activa de aprendizaje y resiliencia.</p>
+    </div>
+
+    <div class="glosario-card glass" id="glosario-card-pwm">
+      <h4 class="mono" id="glosario-pwm">Modulación por Ancho de Pulsos (PWM)</h4>
+      <p>Técnica digital que consiste en modificar los ciclos de encendido y apagado de una señal cuadrada a una frecuencia muy alta. Permite simular una señal analógica variable desde un pin digital de Arduino, ideal para regular la intensidad lumínica del amanecer/atardecer marciano mediante el MOSFET.</p>
+    </div>
+
+    <div class="glosario-card glass" id="glosario-card-mosfet">
+      <h4 class="mono" id="glosario-mosfet">MOSFET (IRF520)</h4>
+      <p>Transistor de efecto de campo que actúa como un interruptor electrónico de alta velocidad. A diferencia de un relé mecánico, soporta conmutaciones rápidas (PWM), lo que permite regular de forma progresiva la potencia entregada a la tira LED de cultivo.</p>
+    </div>
+
+    <div class="glosario-card glass" id="glosario-card-monitor-serie">
+      <h4 class="mono" id="glosario-monitor-serie">Monitor Serie</h4>
+      <p>Canal de comunicación asíncrona que conecta la placa Arduino con el ordenador a través del puerto USB. Permite al programador visualizar en tiempo real en la pantalla las lecturas de los sensores o el estado interno de las variables del algoritmo para tareas de depuración.</p>
+    </div>
+
+    <div class="glosario-card glass" id="glosario-card-rele">
+      <h4 class="mono" id="glosario-rele">Relé (Módulo de 1 Canal)</h4>
+      <p>Interruptor electromecánico que se activa mediante una pequeña señal digital de 5V procedente de Arduino. Al activarse, cierra físicamente un circuito independiente de 12V, permitiendo el paso de corriente hacia la bomba peristáltica.</p>
+    </div>
+
+    <div class="glosario-card glass" id="glosario-card-sensor-analogico">
+      <h4 class="mono" id="glosario-sensor-analogico">Sensor Analógico</h4>
+      <p>Dispositivo de entrada que transforma una magnitud física del entorno (como la humedad del suelo o la intensidad de la luz) en una señal eléctrica continua que toma valores en un rango determinado. Arduino traduce esta señal en un espectro digital de 0 a 1023.</p>
+    </div>
+
+    <div class="glosario-card glass" id="glosario-card-sensor-capacitivo">
+      <h4 class="mono" id="glosario-sensor-capacitivo">Sensor Capacitivo</h4>
+      <p>Dispositivo que mide la humedad del entorno midiendo los cambios en la capacitancia eléctrica (capacidad de almacenar carga) en lugar de la resistencia. Al no exponer contactos metálicos directos al agua, es inmune a la corrosión, garantizando la estabilidad a largo plazo en sistemas de hidroponía.</p>
+    </div>
+
+    <div class="glosario-card glass" id="glosario-card-pin-analogico">
+      <h4 class="mono" id="glosario-pin-analogico">Pin Analógico</h4>
+      <p>Conexión de la placa que puede leer un rango de valores (ej. de 0 a 1023), ideal para medir la cantidad exacta de luz o agua.</p>
+    </div>
+
+    <div class="glosario-card glass" id="glosario-card-actuador">
+      <h4 class="mono" id="glosario-actuador">Actuador</h4>
+      <p>Componente que realiza una acción física en el mundo real, como moverse (motor) o iluminar (LED).</p>
+    </div>
+
+    <div class="glosario-card glass" id="glosario-card-condicional">
+      <h4 class="mono" id="glosario-condicional">Condicional (SI/SINO)</h4>
+      <p>Instrucción lógica. "SI ocurre esto (tierra seca), haz esto (encender bomba). SINO, no hagas nada".</p>
+    </div>
+
+    <div class="glosario-card glass" id="glosario-card-bucle">
+      <h4 class="mono" id="glosario-bucle">Bucle (Loop)</h4>
+      <p>Parte del código que el Arduino repite infinitamente sin detenerse nunca.</p>
+    </div>
+  </div>
+
+
+</section>
+
+<script src="./GlosarioBlock.js"></script>

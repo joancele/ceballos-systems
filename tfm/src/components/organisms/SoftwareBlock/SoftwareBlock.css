@@ -1,0 +1,503 @@
+/* SoftwareBlock Styles */
+
+.sw-stepper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(var(--develop-accent-rgb), 0.1);
+  margin-bottom: 2rem;
+}
+
+.step-btn {
+  background: none;
+  border: none;
+  color: hsl(var(--text-muted));
+  font-size: 0.85rem;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  transition: var(--transition-smooth);
+}
+
+.step-btn:hover {
+  color: hsl(var(--text-primary));
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.step-btn.active-step {
+  color: var(--develop-accent);
+  background-color: rgba(var(--develop-accent-rgb), 0.05);
+  border: 1px solid rgba(var(--develop-accent-rgb), 0.2);
+  text-shadow: 0 0 8px rgba(var(--develop-accent-rgb), 0.3);
+}
+
+.step-icon {
+  font-size: 1.1rem;
+}
+
+.step-text {
+  font-weight: 600;
+}
+
+.step-connector {
+  flex-grow: 1;
+  height: 1px;
+  background-color: rgba(var(--develop-accent-rgb), 0.1);
+  margin: 0 1rem;
+}
+
+.sw-spa-container {
+  position: relative;
+  width: 100%;
+  min-height: 380px;
+}
+
+.sw-spa-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.spa-page-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.spa-page-header h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: hsl(var(--text-primary));
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.page-subtitle {
+  font-size: 0.9rem;
+  color: hsl(var(--text-secondary));
+  margin: 0;
+}
+
+.slide-deck-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.slide-deck {
+  position: relative;
+  width: 100%;
+  min-height: 250px;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.slide {
+  grid-area: 1 / 1 / 2 / 2;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(10px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  width: 100%;
+}
+
+.slide.active-slide {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
+  z-index: 5;
+}
+
+.slide-content {
+  padding: 2.25rem;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.01);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-height: 250px;
+  justify-content: center;
+}
+
+.slide-num {
+  font-size: 0.7rem;
+  color: hsl(var(--text-muted));
+  letter-spacing: 0.05em;
+  align-self: flex-start;
+}
+
+.slide-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(var(--develop-accent-rgb), 0.05);
+  border: 1px solid rgba(var(--develop-accent-rgb), 0.15);
+  margin-bottom: 0.5rem;
+}
+
+.visual-emoji {
+  font-size: 1.5rem;
+}
+
+.slide-content h4 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: hsl(var(--text-primary));
+  margin: 0;
+}
+
+.slide-content p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: hsl(var(--text-secondary));
+  margin: 0;
+}
+
+.slide-nav-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.btn-slide-nav {
+  background-color: hsl(var(--bg-tertiary));
+  border: 1px solid hsl(var(--border-color));
+  color: hsl(var(--text-primary));
+  padding: 0.5rem 1.25rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: var(--transition-smooth);
+  font-weight: 600;
+}
+
+.btn-slide-nav:hover:not(:disabled) {
+  background-color: var(--develop-accent);
+  color: #121212;
+  border-color: var(--develop-accent);
+  box-shadow: 0 0 10px rgba(var(--develop-accent-rgb), 0.35);
+}
+
+.btn-slide-nav:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.slide-dots {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.slide-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.slide-dot:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.slide-dot.active-dot {
+  background-color: var(--develop-accent);
+  box-shadow: 0 0 8px rgba(var(--develop-accent-rgb), 0.5);
+  width: 20px;
+  border-radius: 4px;
+}
+
+/* QUIZ SYSTEM */
+.quiz-container {
+  padding: 2rem;
+  border-radius: 4px;
+  background-color: rgba(18, 18, 18, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.quiz-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.quiz-icon {
+  font-size: 1.5rem;
+}
+
+.quiz-header h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: hsl(var(--text-primary));
+  margin: 0;
+}
+
+.quiz-intro {
+  font-size: 0.9rem;
+  color: hsl(var(--text-secondary));
+  margin: 0;
+}
+
+.quiz-questions {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.quiz-question-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.quiz-question {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: hsl(var(--text-primary));
+  margin: 0;
+}
+
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.quiz-option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.01);
+  border: 1px solid transparent;
+  transition: var(--transition-smooth);
+  font-size: 0.85rem;
+  color: hsl(var(--text-secondary));
+}
+
+.quiz-option:hover {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.quiz-option input {
+  display: none;
+}
+
+.radio-custom {
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid hsl(var(--border-color));
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-smooth);
+}
+
+.quiz-option input:checked + .radio-custom {
+  border-color: var(--develop-accent);
+  background-color: rgba(var(--develop-accent-rgb), 0.05);
+}
+
+.quiz-option input:checked + .radio-custom::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--develop-accent);
+}
+
+.quiz-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 1.25rem;
+}
+
+.quiz-feedback {
+  font-size: 0.8rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  flex-grow: 1;
+  line-height: 1.4;
+}
+
+.quiz-feedback.success {
+  background-color: rgba(var(--develop-accent-rgb), 0.08);
+  color: var(--develop-accent);
+  border: 1px solid rgba(var(--develop-accent-rgb), 0.25);
+}
+
+.quiz-feedback.error {
+  background-color: rgba(255, 59, 48, 0.08);
+  color: #ff3b30;
+  border: 1px solid rgba(255, 59, 48, 0.25);
+}
+
+/* Tinkercad Infographic Layout */
+.tinkercad-infographic {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 1.5rem;
+  align-items: stretch;
+  width: 100%;
+}
+
+.infographic-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  min-height: 340px;
+}
+
+.infographic-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.tinkercad-infographic:hover .infographic-img {
+  transform: scale(1.01);
+}
+
+.visual-glow-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: radial-gradient(circle at center, transparent 30%, rgba(18, 18, 18, 0.4) 100%);
+  box-shadow: inset 0 0 30px rgba(0, 255, 65, 0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.infographic-panels {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.panel-card {
+  padding: 1rem;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.panel-card:hover {
+  background-color: rgba(255, 255, 255, 0.02);
+  border-color: rgba(var(--develop-accent-rgb), 0.3);
+  transform: translateY(-2px);
+}
+
+.panel-card.active-panel {
+  background-color: rgba(var(--develop-accent-rgb), 0.04);
+  border-color: var(--develop-accent);
+  box-shadow: 0 0 15px rgba(var(--develop-accent-rgb), 0.15);
+  transform: scale(1.02);
+}
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.panel-icon {
+  font-size: 1.1rem;
+}
+
+.panel-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: hsl(var(--text-muted));
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+}
+
+.panel-card.active-panel .panel-label {
+  color: var(--develop-accent);
+}
+
+.panel-text {
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: hsl(var(--text-secondary));
+  margin: 0 !important;
+}
+
+/* Make slide-deck min-height support taller infographics */
+.slide-deck {
+  min-height: 340px !important;
+}
+
+@media (max-width: 992px) {
+  .tinkercad-infographic {
+    grid-template-columns: 1fr;
+  }
+  
+  .infographic-visual {
+    min-height: 250px;
+  }
+}
+
+@media (max-width: 576px) {
+  .infographic-panels {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Light Theme Overrides */
+[data-theme="light"] .quiz-container {
+  background-color: rgba(0, 0, 0, 0.02);
+  border: 1px solid hsl(var(--border-color));
+}
+
+[data-theme="light"] .quiz-option {
+  background-color: rgba(0, 0, 0, 0.01);
+}
+
+[data-theme="light"] .quiz-option:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+

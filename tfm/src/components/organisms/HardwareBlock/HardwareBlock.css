@@ -1,0 +1,1080 @@
+/* HardwareBlock Styles */
+
+/* LOCK SYSTEM */
+.locked-section {
+  position: relative;
+  pointer-events: none;
+  user-select: none;
+}
+
+.locked-section > *:not(.lock-overlay) {
+  opacity: 0.15 !important;
+  filter: blur(4px) grayscale(0.8) !important;
+}
+
+.lock-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(18, 18, 18, 0.4);
+  border-radius: 4px;
+  padding: 2rem;
+  text-align: center;
+  pointer-events: auto;
+}
+
+.lock-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: hsl(var(--text-secondary));
+  max-width: 450px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* HARDWARE TABS */
+.hardware-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(var(--develop-accent-rgb), 0.15);
+  padding-bottom: 0.75rem;
+}
+
+.hw-tab-btn {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid hsl(var(--border-color));
+  color: hsl(var(--text-secondary));
+  padding: 0.5rem 1.25rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: var(--transition-smooth);
+  font-family: var(--font-sans);
+}
+
+.hw-tab-btn:hover {
+  border-color: rgba(var(--develop-accent-rgb), 0.4);
+  color: hsl(var(--text-primary));
+}
+
+.hw-tab-btn.active-hw-tab {
+  background-color: rgba(var(--develop-accent-rgb), 0.1);
+  color: var(--develop-accent);
+  border-color: var(--develop-accent);
+  box-shadow: 0 0 8px rgba(var(--develop-accent-rgb), 0.15);
+}
+
+.hardware-tab-content {
+  padding: 1.75rem;
+  background-color: rgba(255, 255, 255, 0.01);
+  border: 1px solid hsl(var(--border-color));
+  border-radius: 4px;
+}
+
+.hw-pane-header h4 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: hsl(var(--text-primary));
+  margin-bottom: 1.25rem;
+}
+
+.hw-pane-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2rem;
+}
+
+.wiring-label {
+  font-size: 0.75rem;
+  color: hsl(var(--text-muted));
+  letter-spacing: 0.05em;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.wiring-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  padding-left: 1.25rem;
+  font-size: 0.85rem;
+  color: hsl(var(--text-secondary));
+}
+
+.hw-pane-config p {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: hsl(var(--text-secondary));
+}
+
+/* DHT22 INFOGRAPHIC CONTAINER */
+.dht22-infographic-container {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  padding: 2rem;
+  background-color: var(--dht22-container-bg);
+  border: 1px solid var(--dht22-container-border);
+  border-radius: 4px;
+  margin-top: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.dht22-left-column, .dht22-right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  z-index: 10;
+}
+
+/* INDIVIDUAL PANELS */
+.dht22-panel {
+  background-color: var(--dht22-panel-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--dht22-panel-border);
+  border-radius: 4px;
+  padding: 1.5rem;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dht22-panel:hover {
+  transform: translateY(-4px);
+  border-color: var(--develop-accent);
+  box-shadow: 0 0 15px rgba(var(--develop-accent-rgb), 0.15);
+}
+
+.dht22-panel-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  border-bottom: 1px solid var(--dht22-panel-border);
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.dht22-panel-badge {
+  font-size: 0.65rem;
+  color: var(--develop-accent);
+  letter-spacing: 0.1em;
+}
+
+.dht22-panel h5 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: hsl(var(--text-primary));
+  margin: 0;
+}
+
+.dht22-panel-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  color: hsl(var(--text-secondary));
+  line-height: 1.4;
+}
+
+.dht22-panel-body p {
+  margin: 0;
+}
+
+/* INTERNAL SENSING SPECIFICS */
+.sensing-elements {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sensing-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.icon-svg {
+  width: 18px;
+  height: 18px;
+  color: var(--develop-accent);
+}
+
+.mini-graph {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  border-top: 1px dashed var(--dht22-panel-border);
+  padding-top: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.sparkline {
+  width: 100%;
+  height: 30px;
+  stroke-linecap: round;
+}
+
+.graph-label {
+  font-size: 0.6rem;
+  color: hsl(var(--text-muted));
+  letter-spacing: 0.05em;
+}
+
+/* PINOUT SPECIFICS */
+.volt-tag {
+  align-self: flex-start;
+  background-color: rgba(var(--develop-accent-rgb), 0.1);
+  color: var(--develop-accent);
+  border: 1px solid rgba(var(--develop-accent-rgb), 0.2);
+  font-size: 0.7rem;
+  padding: 0.15rem 0.4rem;
+}
+
+.pins-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.pin-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.pin-num {
+  width: 16px;
+  height: 16px;
+  background-color: var(--dht22-indicator-bg);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  color: var(--dht22-indicator-text);
+}
+
+.pin-row strong {
+  color: hsl(var(--text-primary));
+  width: 45px;
+}
+
+.pin-desc {
+  color: hsl(var(--text-muted));
+}
+
+/* CENTER SENSOR GRAPHIC */
+.dht22-center-sensor {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+  z-index: 5;
+}
+
+.dht22-render-img {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+  position: relative;
+  z-index: 10;
+  animation: floatSensor 6s ease-in-out infinite;
+}
+
+.dht22-glow-ring {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 210, 255, 0.15) 0%, rgba(99, 102, 241, 0.03) 60%, transparent 100%);
+  filter: blur(20px);
+  z-index: 1;
+  animation: pulseGlow 4s ease-in-out infinite alternate;
+}
+
+.dht22-halo-indicator {
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  border: 1px dashed rgba(var(--develop-accent-rgb), 0.15);
+  border-radius: 50%;
+  z-index: 2;
+  animation: rotateHalo 30s linear infinite;
+}
+
+@keyframes floatSensor {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulseGlow {
+  0% { transform: scale(0.9); opacity: 0.6; }
+  100% { transform: scale(1.1); opacity: 1; }
+}
+
+@keyframes rotateHalo {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* SPECIFICATION DIALS & METERS */
+.spec-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-bottom: 1px dashed var(--dht22-panel-border);
+  padding-bottom: 0.75rem;
+}
+
+.spec-section:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.spec-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.spec-info strong {
+  font-size: 0.8rem;
+  color: hsl(var(--text-primary));
+}
+
+.spec-accuracy {
+  font-size: 0.7rem;
+  color: var(--develop-accent);
+}
+
+.circular-dial-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.circular-dial {
+  width: 42px;
+  height: 42px;
+}
+
+.circular-dial-bg {
+  fill: none;
+  stroke: var(--dht22-indicator-bg);
+  stroke-width: 3.5;
+}
+
+.circular-dial-fill {
+  fill: none;
+  stroke: var(--develop-accent);
+  stroke-width: 3.5;
+  stroke-linecap: round;
+  transition: stroke-dasharray 0.3s ease;
+}
+
+.dial-value {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: hsl(var(--text-primary));
+}
+
+.thermometer-track {
+  width: 100%;
+  height: 6px;
+  background-color: var(--dht22-indicator-bg);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.thermometer-bar {
+  height: 100%;
+  background: linear-gradient(to right, #00d2ff, var(--develop-accent));
+  border-radius: 3px;
+}
+
+.temp-readout {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: hsl(var(--text-primary));
+}
+
+/* CONNECTION DIAGRAM */
+.connection-schematic {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--dht22-sub-bg);
+  border: 1px solid var(--dht22-sub-border);
+  padding: 0.65rem 0.85rem;
+  border-radius: 4px;
+  gap: 0.5rem;
+}
+
+.schematic-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.schematic-badge {
+  font-size: 0.65rem;
+  background-color: rgba(var(--develop-accent-rgb), 0.1);
+  color: var(--develop-accent);
+  padding: 0.1rem 0.3rem;
+  border-radius: 2px;
+  align-self: flex-start;
+}
+
+.nano-badge {
+  background-color: rgba(0, 210, 255, 0.1);
+  color: #00d2ff;
+}
+
+.schematic-item strong {
+  font-size: 0.75rem;
+  color: hsl(var(--text-primary));
+}
+
+.schematic-line-indicator {
+  flex-grow: 1;
+  height: 1px;
+  background-color: var(--dht22-line-bg);
+  position: relative;
+}
+
+.schematic-line-indicator::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: var(--develop-accent);
+  border-radius: 50%;
+  top: -2.5px;
+  right: 0;
+}
+
+.resistor-notice {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: hsl(var(--text-muted));
+  border-top: 1px dashed var(--dht22-panel-border);
+  padding-top: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.resistor-icon {
+  width: 20px;
+  height: 20px;
+  color: #00d2ff;
+}
+
+/* SOIL MOISTURE INFOGRAPHIC CONTAINER */
+.soil-infographic-container {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  padding: 2rem;
+  background-color: var(--soil-container-bg);
+  border: 1px solid var(--soil-container-border);
+  border-radius: 4px;
+  margin-top: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.soil-left-column, .soil-right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  z-index: 10;
+}
+
+/* INDIVIDUAL PANELS */
+.soil-panel {
+  background-color: var(--soil-panel-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--soil-panel-border);
+  border-radius: 4px;
+  padding: 1.5rem;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.soil-panel:hover {
+  transform: translateY(-4px);
+  border-color: var(--soil-accent);
+  box-shadow: 0 0 15px rgba(var(--soil-accent-rgb), 0.15);
+}
+
+.soil-panel-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  border-bottom: 1px solid var(--soil-panel-border);
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.soil-panel-badge {
+  font-size: 0.65rem;
+  color: var(--soil-accent);
+  letter-spacing: 0.1em;
+}
+
+.soil-panel h5 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: hsl(var(--text-primary));
+  margin: 0;
+}
+
+.soil-panel-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  color: hsl(var(--text-secondary));
+  line-height: 1.4;
+}
+
+.soil-panel-body p {
+  margin: 0;
+}
+
+/* PRINCIPLE DIAGRAM */
+.principle-diagram {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.principle-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.principle-item.text-success {
+  background-color: rgba(var(--soil-accent-rgb), 0.05);
+  border: 1px solid rgba(var(--soil-accent-rgb), 0.1);
+}
+
+.principle-item.text-success .icon-svg {
+  color: var(--soil-accent);
+}
+
+.principle-item.text-danger {
+  background-color: rgba(239, 68, 68, 0.05);
+  border: 1px solid rgba(239, 68, 68, 0.1);
+}
+
+.principle-item.text-danger .icon-svg {
+  color: #ef4444;
+}
+
+/* CALIBRATION SPECIFICS */
+.calibration-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.calibration-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.cal-status-icon {
+  font-size: 1.2rem;
+}
+
+.cal-details {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.cal-details strong {
+  font-size: 0.75rem;
+  color: hsl(var(--text-primary));
+}
+
+.mini-bar-track {
+  width: 100%;
+  height: 4px;
+  background-color: var(--soil-indicator-bg);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.mini-bar-fill {
+  height: 100%;
+  border-radius: 2px;
+}
+
+.mini-bar-fill.dry {
+  background-color: #ffb74d;
+}
+
+.mini-bar-fill.wet {
+  background-color: var(--soil-blue);
+}
+
+.cal-notice {
+  font-size: 0.7rem;
+  color: hsl(var(--text-muted));
+  border-top: 1px dashed var(--soil-panel-border);
+  padding-top: 0.5rem;
+  margin-top: 0.25rem;
+  text-align: center;
+}
+
+/* CENTER SENSOR GRAPHIC */
+.soil-center-sensor {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+  z-index: 5;
+}
+
+.soil-render-img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+  position: relative;
+  z-index: 10;
+  animation: floatSensor 6s ease-in-out infinite;
+}
+
+.soil-glow-ring {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(var(--soil-blue-rgb), 0.15) 0%, rgba(var(--soil-accent-rgb), 0.03) 60%, transparent 100%);
+  filter: blur(20px);
+  z-index: 1;
+  animation: pulseGlow 4s ease-in-out infinite alternate;
+}
+
+.soil-halo-indicator {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border: 1px dashed rgba(var(--soil-accent-rgb), 0.15);
+  border-radius: 50%;
+  z-index: 2;
+  animation: rotateHalo 30s linear infinite;
+}
+
+.soil-panel .circular-dial-fill {
+  stroke: var(--soil-accent);
+}
+
+.soil-panel .circular-dial-bg {
+  stroke: var(--soil-indicator-bg);
+}
+
+.soil-panel .pin-num {
+  background-color: var(--soil-indicator-bg);
+  color: var(--soil-indicator-text);
+}
+
+/* LDR INFOGRAPHIC CONTAINER */
+.ldr-infographic-container {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  padding: 2rem;
+  background-color: var(--dht22-container-bg);
+  border: 1px solid rgba(var(--ldr-accent-rgb), 0.1);
+  border-radius: 4px;
+  margin-top: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.ldr-left-column, .ldr-right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  z-index: 10;
+}
+
+.ldr-panel {
+  background-color: var(--dht22-panel-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--dht22-panel-border);
+  border-radius: 4px;
+  padding: 1.5rem;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ldr-panel:hover {
+  transform: translateY(-4px);
+  border-color: var(--ldr-accent);
+  box-shadow: 0 0 15px rgba(var(--ldr-accent-rgb), 0.15);
+}
+
+.ldr-panel-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  border-bottom: 1px solid var(--dht22-panel-border);
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.ldr-panel-badge {
+  font-size: 0.65rem;
+  color: var(--ldr-accent);
+  letter-spacing: 0.1em;
+}
+
+.ldr-panel h5 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: hsl(var(--text-primary));
+  margin: 0;
+}
+
+.ldr-panel-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  color: hsl(var(--text-secondary));
+  line-height: 1.4;
+}
+
+.ldr-panel-body p {
+  margin: 0;
+}
+
+.ldr-center-sensor {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+  z-index: 5;
+}
+
+.ldr-render-img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+  position: relative;
+  z-index: 10;
+  animation: floatSensor 6s ease-in-out infinite;
+}
+
+.ldr-glow-ring {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(var(--ldr-accent-rgb), 0.15) 0%, rgba(var(--ldr-accent-rgb), 0.03) 60%, transparent 100%);
+  filter: blur(20px);
+  z-index: 1;
+  animation: pulseGlow 4s ease-in-out infinite alternate;
+}
+
+.ldr-halo-indicator {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border: 1px dashed rgba(var(--ldr-accent-rgb), 0.15);
+  border-radius: 50%;
+  z-index: 2;
+  animation: rotateHalo 30s linear infinite;
+}
+
+.ldr-panel .circular-dial-fill {
+  stroke: var(--ldr-accent);
+}
+
+.ldr-panel .circular-dial-bg {
+  stroke: var(--dht22-indicator-bg);
+}
+
+.ldr-panel .pin-num {
+  background-color: var(--dht22-indicator-bg);
+  color: var(--dht22-indicator-text);
+}
+
+
+/* PUMP INFOGRAPHIC CONTAINER */
+.pump-infographic-container {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  padding: 2rem;
+  background-color: var(--dht22-container-bg);
+  border: 1px solid rgba(var(--pump-accent-rgb), 0.1);
+  border-radius: 4px;
+  margin-top: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.pump-left-column, .pump-right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  z-index: 10;
+}
+
+.pump-panel {
+  background-color: var(--dht22-panel-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--dht22-panel-border);
+  border-radius: 4px;
+  padding: 1.5rem;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pump-panel:hover {
+  transform: translateY(-4px);
+  border-color: var(--pump-accent);
+  box-shadow: 0 0 15px rgba(var(--pump-accent-rgb), 0.15);
+}
+
+.pump-panel-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  border-bottom: 1px solid var(--dht22-panel-border);
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.pump-panel-badge {
+  font-size: 0.65rem;
+  color: var(--pump-accent);
+  letter-spacing: 0.1em;
+}
+
+.pump-panel h5 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: hsl(var(--text-primary));
+  margin: 0;
+}
+
+.pump-panel-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  color: hsl(var(--text-secondary));
+  line-height: 1.4;
+}
+
+.pump-panel-body p {
+  margin: 0;
+}
+
+.pump-center-sensor {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+  z-index: 5;
+}
+
+.pump-render-img {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+  position: relative;
+  z-index: 10;
+  animation: floatSensor 6s ease-in-out infinite;
+}
+
+.pump-glow-ring {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(var(--pump-accent-rgb), 0.15) 0%, rgba(var(--pump-accent-rgb), 0.03) 60%, transparent 100%);
+  filter: blur(20px);
+  z-index: 1;
+  animation: pulseGlow 4s ease-in-out infinite alternate;
+}
+
+.pump-halo-indicator {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border: 1px dashed rgba(var(--pump-accent-rgb), 0.15);
+  border-radius: 50%;
+  z-index: 2;
+  animation: rotateHalo 30s linear infinite;
+}
+
+.pump-panel .pin-num {
+  background-color: var(--dht22-indicator-bg);
+  color: var(--dht22-indicator-text);
+}
+
+
+/* LED INFOGRAPHIC CONTAINER */
+.led-infographic-container {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  padding: 2rem;
+  background-color: var(--dht22-container-bg);
+  border: 1px solid rgba(var(--led-accent-rgb), 0.1);
+  border-radius: 4px;
+  margin-top: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.led-left-column, .led-right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  z-index: 10;
+}
+
+.led-panel {
+  background-color: var(--dht22-panel-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--dht22-panel-border);
+  border-radius: 4px;
+  padding: 1.5rem;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.led-panel:hover {
+  transform: translateY(-4px);
+  border-color: var(--led-accent);
+  box-shadow: 0 0 15px rgba(var(--led-accent-rgb), 0.15);
+}
+
+.led-panel-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  border-bottom: 1px solid var(--dht22-panel-border);
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.led-panel-badge {
+  font-size: 0.65rem;
+  color: var(--led-accent);
+  letter-spacing: 0.1em;
+}
+
+.led-panel h5 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: hsl(var(--text-primary));
+  margin: 0;
+}
+
+.led-panel-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  color: hsl(var(--text-secondary));
+  line-height: 1.4;
+}
+
+.led-panel-body p {
+  margin: 0;
+}
+
+.led-center-sensor {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+  z-index: 5;
+}
+
+.led-render-img {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+  position: relative;
+  z-index: 10;
+  animation: floatSensor 6s ease-in-out infinite;
+}
+
+.led-glow-ring {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(var(--led-accent-rgb), 0.15) 0%, rgba(var(--led-accent-rgb), 0.03) 60%, transparent 100%);
+  filter: blur(20px);
+  z-index: 1;
+  animation: pulseGlow 4s ease-in-out infinite alternate;
+}
+
+.led-halo-indicator {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border: 1px dashed rgba(var(--led-accent-rgb), 0.15);
+  border-radius: 50%;
+  z-index: 2;
+  animation: rotateHalo 30s linear infinite;
+}
+
+.led-panel .pin-num {
+  background-color: var(--dht22-indicator-bg);
+  color: var(--dht22-indicator-text);
+}
+
+
+@media (max-width: 900px) {
+  .dht22-infographic-container, .soil-infographic-container, .ldr-infographic-container, .pump-infographic-container, .led-infographic-container {
+    grid-template-columns: 1fr;
+    padding: 1.25rem;
+    gap: 1.5rem;
+  }
+
+  .dht22-center-sensor, .soil-center-sensor, .ldr-center-sensor, .pump-center-sensor, .led-center-sensor {
+    min-height: 200px;
+    order: -1;
+  }
+}

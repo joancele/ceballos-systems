@@ -1,0 +1,423 @@
+---
+import './SoftwareBlock.css';
+---
+
+<section class="academy-section glass border-develop" id="dev-block-software">
+  <div class="section-badge mono text-develop">🟩 BLOQUE 1: Entornos de Software (Simulación y Código)</div>
+  <h2 class="section-title">Las herramientas de control</h2>
+  
+  <!-- Stepper / Navegación SPA -->
+  <div class="sw-stepper glass">
+    <button class="step-btn active-step" data-step-page="1">
+      <span class="step-icon">📐</span>
+      <span class="step-text">Tinkercad</span>
+    </button>
+    <div class="step-connector"></div>
+    <button class="step-btn" data-step-page="2">
+      <span class="step-icon">🧩</span>
+      <span class="step-text">ArduinoBlocks</span>
+    </button>
+    <div class="step-connector"></div>
+    <button class="step-btn" data-step-page="3">
+      <span class="step-icon">📝</span>
+      <span class="step-text">Miniprueba</span>
+    </button>
+  </div>
+
+  <!-- SPA Contenedor de Páginas -->
+  <div class="sw-spa-container">
+    
+    <!-- PÁGINA 1: Tinkercad Slideshow -->
+    <div class="sw-spa-page" id="sw-page-tinkercad">
+      <div class="spa-page-header">
+        <span class="logo-icon">📐</span>
+        <h3>Guía de Simulación: Tinkercad</h3>
+        <p class="page-subtitle">Aprende a conectar y probar tus circuitos de forma virtual antes del montaje real.</p>
+      </div>
+
+      <div class="slide-deck-wrapper">
+        <div class="slide-deck" id="deck-tinkercad">
+          <!-- Slide 1 -->
+          <div class="slide active-slide">
+            <div class="tinkercad-infographic">
+              <div class="infographic-visual glass border-develop-dim">
+                <img src="/tinkercad_interface_basics.png" alt="Tinkercad Interface Basics" class="infographic-img" />
+                <div class="visual-glow-overlay"></div>
+              </div>
+              <div class="infographic-panels">
+                <div class="panel-card glass border-develop-dim active-panel" data-panel="1">
+                  <div class="panel-header">
+                    <span class="panel-icon">🧱</span>
+                    <span class="panel-label mono">1. COMPONENT LIBRARY</span>
+                  </div>
+                  <p class="panel-text"><strong>Drag & Drop:</strong> Access over 100+ components using the side-panel browser search bar.</p>
+                </div>
+                <div class="panel-card glass border-develop-dim" data-panel="2">
+                  <div class="panel-header">
+                    <span class="panel-icon">📏</span>
+                    <span class="panel-label mono">2. WORKPLANE PROPERTIES</span>
+                  </div>
+                  <p class="panel-text"><strong>Workspace control:</strong> Adjust grid size and snapping options using simplified UI toggles.</p>
+                </div>
+                <div class="panel-card glass border-develop-dim" data-panel="3">
+                  <div class="panel-header">
+                    <span class="panel-icon">⚙️</span>
+                    <span class="panel-label mono">3. ARDUINO MODEL</span>
+                  </div>
+                  <p class="panel-text"><strong>Base Microcontroller:</strong> Full simulation of Arduino Uno R3 board, pins, and communication ports.</p>
+                </div>
+                <div class="panel-card glass border-develop-dim" data-panel="4">
+                  <div class="panel-header">
+                    <span class="panel-icon">🎨</span>
+                    <span class="panel-label mono">4. COMPONENT PROPERTIES</span>
+                  </div>
+                  <p class="panel-text"><strong>Parameter Tuning:</strong> Adjust sliders for resistance values or change color drop-downs for LEDs.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="slide">
+            <div class="tinkercad-infographic">
+              <div class="infographic-visual glass border-develop-dim">
+                <img src="/tinkercad_wiring_breadboarding.png" alt="Tinkercad Wiring & Breadboarding" class="infographic-img" />
+                <div class="visual-glow-overlay"></div>
+              </div>
+              <div class="infographic-panels">
+                <div class="panel-card glass border-develop-dim active-panel" data-panel="1">
+                  <div class="panel-header">
+                    <span class="panel-icon">🖱️</span>
+                    <span class="panel-label mono">1. MAKING CONNECTIONS</span>
+                  </div>
+                  <p class="panel-text"><strong>Click-to-Click:</strong> Hover over a component pin, click, and drag a curved line to snap it to any breadboard hole.</p>
+                </div>
+                <div class="panel-card glass border-develop-dim" data-panel="2">
+                  <div class="panel-header">
+                    <span class="panel-icon">🌈</span>
+                    <span class="panel-label mono">2. WIRE MANAGEMENT</span>
+                  </div>
+                  <p class="panel-text"><strong>Organize colors:</strong> Use Red for VCC (power), Black for GND (ground), and distinct colors for signals.</p>
+                </div>
+                <div class="panel-card glass border-develop-dim" data-panel="3">
+                  <div class="panel-header">
+                    <span class="panel-icon">🧲</span>
+                    <span class="panel-label mono">3. BREADBOARD LOGIC</span>
+                  </div>
+                  <p class="panel-text"><strong>Internal rails:</strong> Understand how horizontal power rails and vertical component lines distribute signals.</p>
+                </div>
+                <div class="panel-card glass border-develop-dim" data-panel="4">
+                  <div class="panel-header">
+                    <span class="panel-icon">🔌</span>
+                    <span class="panel-label mono">4. POWER ROUTING</span>
+                  </div>
+                  <p class="panel-text"><strong>Voltage path:</strong> Route lines from the Arduino 5V and GND pins directly to the protoboard's power rails.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 3 -->
+          <div class="slide">
+            <div class="tinkercad-infographic">
+              <div class="infographic-visual glass border-develop-dim">
+                <img src="/tinkercad_code_simulation.png" alt="Tinkercad Code & Simulation" class="infographic-img" />
+                <div class="visual-glow-overlay"></div>
+              </div>
+              <div class="infographic-panels">
+                <div class="panel-card glass border-develop-dim active-panel" data-panel="1">
+                  <div class="panel-header">
+                    <span class="panel-icon">🧩</span>
+                    <span class="panel-label mono">1. CODE INTERFACE</span>
+                  </div>
+                  <p class="panel-text"><strong>Visual Programming:</strong> Use colorful code block interface or switch to text mode to see C++ syntax.</p>
+                </div>
+                <div class="panel-card glass border-develop-dim" data-panel="2">
+                  <div class="panel-header">
+                    <span class="panel-icon">♾️</span>
+                    <span class="panel-label mono">2. PROGRAM LOGIC</span>
+                  </div>
+                  <p class="panel-text"><strong>Flow Control:</strong> Program actions using the Setup section (run once) and the Loop section (repeat inf.).</p>
+                </div>
+                <div class="panel-card glass border-develop-dim" data-panel="3">
+                  <div class="panel-header">
+                    <span class="panel-icon">▶️</span>
+                    <span class="panel-label mono">3. SIMULATION CONTROL</span>
+                  </div>
+                  <p class="panel-text"><strong>Real-time simulation:</strong> Click "Start Simulation" to execute the program and test interactions virtually.</p>
+                </div>
+                <div class="panel-card glass border-develop-dim" data-panel="4">
+                  <div class="panel-header">
+                    <span class="panel-icon">📟</span>
+                    <span class="panel-label mono">4. DEBUGGING TOOLS</span>
+                  </div>
+                  <p class="panel-text"><strong>Serial Monitor:</strong> Print values to the console output or capture waveforms using the Logic Analyzer.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide Navigation Controls -->
+        <div class="slide-nav-controls">
+          <button class="btn-slide-nav prev-slide" data-deck="tinkercad" disabled>← Anterior</button>
+          <div class="slide-dots" data-deck="tinkercad">
+            <span class="slide-dot active-dot" data-slide-index="0"></span>
+            <span class="slide-dot" data-slide-index="1"></span>
+            <span class="slide-dot" data-slide-index="2"></span>
+          </div>
+          <button class="btn-slide-nav next-slide" data-deck="tinkercad">Siguiente →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PÁGINA 2: ArduinoBlocks Slideshow -->
+    <div class="sw-spa-page hidden" id="sw-page-arduinoblocks">
+      <div class="spa-page-header">
+        <span class="logo-icon">🧩</span>
+        <h3>Guía de Programación: ArduinoBlocks</h3>
+        <p class="page-subtitle">Diseña el software del biodomo usando bloques lógicos de forma visual.</p>
+      </div>
+
+      <div class="slide-deck-wrapper">
+        <div class="slide-deck" id="deck-arduinoblocks">
+          <!-- Slide 1 -->
+          <div class="slide active-slide">
+            <div class="tinkercad-infographic">
+              <div class="infographic-visual glass border-develop-dim">
+                <img src="/arduinoblocks_config_basics.png" alt="ArduinoBlocks Configuration & Basics" class="infographic-img" />
+                <div class="visual-glow-overlay"></div>
+              </div>
+              <div class="infographic-panels">
+                <div class="panel-card glass border-develop-dim active-panel" data-panel="1">
+                  <div class="panel-header">
+                    <span class="panel-icon">🔌</span>
+                    <span class="panel-label mono">1. THE CONNECTOR</span>
+                  </div>
+                  <p class="panel-text"><strong>Bridge link:</strong> Background connector software communicates over USB. Verify green icon in system tray.</p>
+                </div>
+                <div class="panel-card glass border-develop-dim" data-panel="2">
+                  <div class="panel-header">
+                    <span class="panel-icon">♾️</span>
+                    <span class="panel-label mono">2. THE CANVAS</span>
+                  </div>
+                  <p class="panel-text"><strong>Structure:</strong> Setup runs once on boot (sets pins, screens) while Loop repeats infinitely from top to bottom.</p>
+                </div>
+                <div class="panel-card glass border-develop-dim" data-panel="3">
+                  <div class="panel-header">
+                    <span class="panel-icon">🧱</span>
+                    <span class="panel-label mono">3. COMPONENT MENU</span>
+                  </div>
+                  <p class="panel-text"><strong>Toolbox categories:</strong> Blocks are color-coded into Inputs/Outputs, Logic, Math, and dedicated Sensors/Actuators.</p>
+                </div>
+                <div class="panel-card glass border-develop-dim" data-panel="4">
+                  <div class="panel-header">
+                    <span class="panel-icon">📤</span>
+                    <span class="panel-label mono">4. THE "UPLOAD" FLOW</span>
+                  </div>
+                  <p class="panel-text"><strong>Upload:</strong> Web server translates blocks to C++ code, compiles and flashes memory, blinking built-in D13 LED.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="slide">
+            <div class="tinkercad-infographic">
+              <div class="infographic-visual glass border-develop-dim">
+                <img src="/arduinoblocks_sensors_data.png" alt="ArduinoBlocks Sensors & Data" class="infographic-img" />
+                <div class="visual-glow-overlay"></div>
+              </div>
+              <div class="infographic-panels">
+                <div class="panel-card glass border-develop-dim active-panel" data-panel="1">
+                  <div class="panel-header">
+                    <span class="panel-icon">💾</span>
+                    <span class="panel-label mono">1. VARIABLES CREATION</span>
+                  </div>
+                  <p class="panel-text"><strong>Data Storage:</strong> Define 'Humedad_Suelo' variable to hold dynamic soil sensor readings in board memory.</p>
+                </div>
+                <div class="panel-card glass border-develop-dim" data-panel="2">
+                  <div class="panel-header">
+                    <span class="panel-icon">📡</span>
+                    <span class="panel-label mono">2. DIGITAL VS ANALOG</span>
+                  </div>
+                  <p class="panel-text"><strong>Input sampling:</strong> Binary (0/1) for buttons, vs continuous range (0-1023) for capacitive soil moisture sensor.</p>
+                </div>
+                <div class="panel-card glass border-develop-dim" data-panel="3">
+                  <div class="panel-header">
+                    <span class="panel-icon">🧩</span>
+                    <span class="panel-label mono">3. CONDITIONAL BLOCK</span>
+                  </div>
+                  <p class="panel-text"><strong>SI... ENTONCES... SINO:</strong> Logic conditional statement. Compares Humedad_Suelo &lt; 400 to toggle irrigation.</p>
+                </div>
+                <div class="panel-card glass border-develop-dim" data-panel="4">
+                  <div class="panel-header">
+                    <span class="panel-icon">📟</span>
+                    <span class="panel-label mono">4. SERIAL MONITOR</span>
+                  </div>
+                  <p class="panel-text"><strong>Telemetry console:</strong> Print real-time variables to Serial Port, vital for ground debugging.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 3 -->
+          <div class="slide">
+            <div class="tinkercad-infographic">
+              <div class="infographic-visual glass border-develop-dim">
+                <img src="/arduinoblocks_actuators_timing.png" alt="ArduinoBlocks Actuators & Timing" class="infographic-img" />
+                <div class="visual-glow-overlay"></div>
+              </div>
+              <div class="infographic-panels">
+                <div class="panel-card glass border-develop-dim active-panel" data-panel="1">
+                  <div class="panel-header">
+                    <span class="panel-icon">⚡</span>
+                    <span class="panel-label mono">1. POWER RELAY</span>
+                  </div>
+                  <p class="panel-text"><strong>Actuators control:</strong> Digital 5V signal switches relay coil, toggling external 12V water pump circuit.</p>
+                </div>
+                <div class="panel-card glass border-develop-dim" data-panel="2">
+                  <div class="panel-header">
+                    <span class="panel-icon">⚠️</span>
+                    <span class="panel-label mono">2. THE DELAY DANGER</span>
+                  </div>
+                  <p class="panel-text"><strong>Execution lock:</strong> 'Wait (1000ms)' block freezes all sensor readings, leaving system blind to temperature alarms.</p>
+                </div>
+                <div class="panel-card glass border-develop-dim" data-panel="3">
+                  <div class="panel-header">
+                    <span class="panel-icon">⏰</span>
+                    <span class="panel-label mono">3. NON-BLOCKING TASKS</span>
+                  </div>
+                  <p class="panel-text"><strong>Multitasking:</strong> Tareas/Temporizers execute actions (measure temp every 2s, blink alarm every 500ms) without delays.</p>
+                </div>
+                <div class="panel-card glass border-develop-dim" data-panel="4">
+                  <div class="panel-header">
+                    <span class="panel-icon">📦</span>
+                    <span class="panel-label mono">4. MODULAR FUNCTIONS</span>
+                  </div>
+                  <p class="panel-text"><strong>Clean Code:</strong> Group blocks under custom 'Function_Ventilar' subroutine to call cleaner, reusable operations.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide Navigation Controls -->
+        <div class="slide-nav-controls">
+          <button class="btn-slide-nav prev-slide" data-deck="arduinoblocks">← Anterior</button>
+          <div class="slide-dots" data-deck="arduinoblocks">
+            <span class="slide-dot active-dot" data-slide-index="0"></span>
+            <span class="slide-dot" data-slide-index="1"></span>
+            <span class="slide-dot" data-slide-index="2"></span>
+          </div>
+          <button class="btn-slide-nav next-slide" data-deck="arduinoblocks">Siguiente →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PÁGINA 3: Miniprueba con 4 Preguntas -->
+    <div class="sw-spa-page hidden" id="sw-page-quiz">
+      <div class="quiz-container glass border-develop-dim" id="software-quiz-box">
+        <div class="quiz-header">
+          <span class="quiz-icon">📝</span>
+          <h3>Miniprueba de Validación: Control de Software</h3>
+        </div>
+        <p class="quiz-intro">Responde correctamente a las 4 preguntas para desbloquear el Bloque 2 (Hardware).</p>
+        
+        <div class="quiz-questions">
+          <!-- Question 1 -->
+          <div class="quiz-question-block" data-qid="q-sw-1">
+            <p class="quiz-question">1. ¿Qué debemos comprobar en Tinkercad antes de montar el circuito en el mundo real?</p>
+            <div class="quiz-options">
+              <label class="quiz-option">
+                <input type="radio" name="q-sw-1" value="wrong1">
+                <span class="radio-custom"></span>
+                <span>Si la velocidad de comunicación Wi-Fi en Marte es óptima.</span>
+              </label>
+              <label class="quiz-option">
+                <input type="radio" name="q-sw-1" value="correct">
+                <span class="radio-custom"></span>
+                <span>Que no haya cortocircuitos y que el conexionado de cables sea correcto.</span>
+              </label>
+              <label class="quiz-option">
+                <input type="radio" name="q-sw-1" value="wrong2">
+                <span class="radio-custom"></span>
+                <span>El precio de los sensores en el mercado local.</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Question 2 -->
+          <div class="quiz-question-block" data-qid="q-sw-2">
+            <p class="quiz-question">2. ¿En qué bloque de ArduinoBlocks debemos encajar nuestro <a href="#glosario-algoritmo" class="glosario-link">algoritmo</a> para que se ejecute continuamente?</p>
+            <div class="quiz-options">
+              <label class="quiz-option">
+                <input type="radio" name="q-sw-2" value="wrong1">
+                <span class="radio-custom"></span>
+                <span>En el bloque de "Inicializar (Setup)".</span>
+              </label>
+              <label class="quiz-option">
+                <input type="radio" name="q-sw-2" value="wrong2">
+                <span class="radio-custom"></span>
+                <span>En un bloque de comentarios inactivo.</span>
+              </label>
+              <label class="quiz-option">
+                <input type="radio" name="q-sw-2" value="correct">
+                <span class="radio-custom"></span>
+                <span>En el bloque de "Bucle Infinito (Loop)".</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Question 3 -->
+          <div class="quiz-question-block" data-qid="q-sw-3">
+            <p class="quiz-question">3. ¿Cuál es el código de colores recomendado en Tinkercad para diferenciar la línea de alimentación de 5V y la de tierra (GND)?</p>
+            <div class="quiz-options">
+              <label class="quiz-option">
+                <input type="radio" name="q-sw-3" value="wrong1">
+                <span class="radio-custom"></span>
+                <span>Cable azul para 5V y verde para GND.</span>
+              </label>
+              <label class="quiz-option">
+                <input type="radio" name="q-sw-3" value="correct">
+                <span class="radio-custom"></span>
+                <span>Cable rojo para 5V y negro para GND.</span>
+              </label>
+              <label class="quiz-option">
+                <input type="radio" name="q-sw-3" value="wrong2">
+                <span class="radio-custom"></span>
+                <span>Cable amarillo para 5V y blanco para GND.</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Question 4 -->
+          <div class="quiz-question-block" data-qid="q-sw-4">
+            <p class="quiz-question">4. Si deseas guardar y procesar la lectura de un sensor analógico en ArduinoBlocks para tomar decisiones más tarde, ¿qué debes emplear?</p>
+            <div class="quiz-options">
+              <label class="quiz-option">
+                <input type="radio" name="q-sw-4" value="wrong1">
+                <span class="radio-custom"></span>
+                <span>Un bloque de retardo de tiempo (delay).</span>
+              </label>
+              <label class="quiz-option">
+                <input type="radio" name="q-sw-4" value="wrong2">
+                <span class="radio-custom"></span>
+                <span>Un pin de salida digital (HIGH/LOW).</span>
+              </label>
+              <label class="quiz-option">
+                <input type="radio" name="q-sw-4" value="correct">
+                <span class="radio-custom"></span>
+                <span>Una Variable para almacenar la lectura.</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="quiz-actions">
+          <button class="btn-action btn-develop-glow mono" id="submit-software-quiz">Validar Respuestas</button>
+          <div class="quiz-feedback hidden mono" id="software-quiz-feedback"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script src="./SoftwareBlock.js"></script>

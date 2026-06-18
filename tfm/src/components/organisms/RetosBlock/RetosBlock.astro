@@ -1,0 +1,77 @@
+---
+import './RetosBlock.css';
+---
+
+<section class="academy-section glass border-develop locked-section" id="dev-block-retos">
+  <!-- Lock Overlay -->
+  <div class="lock-overlay" id="retos-lock-overlay">
+    <span class="lock-icon">🔒</span>
+    <p class="lock-text">Módulo Bloqueado. Supera la Miniprueba del Bloque 2 (Hardware) para desbloquear los Retos de la Misión.</p>
+  </div>
+
+  <div class="section-badge mono text-develop">🟦 BLOQUE 3: Retos de la Misión (Plan de Vuelo)</div>
+  <h2 class="section-title">Tus objetivos para salvar la colonia</h2>
+  
+  <div class="challenges-progress-panel glass">
+    <div class="progress-info mono" style="display: flex; justify-content: space-between; margin-bottom: 0.4rem; font-size: 0.75rem; color: hsl(var(--text-muted));">
+      <span>Progreso de Misión:</span>
+      <span id="retos-progress-pct">0%</span>
+    </div>
+    <div class="progress-track">
+      <div class="progress-bar bar-develop" id="retos-progress-bar" style="width: 0%"></div>
+    </div>
+  </div>
+
+  <div class="challenges-checklist">
+    <!-- Reto 1 -->
+    <label class="checklist-item challenge-item">
+      <input type="checkbox" class="step-checkbox" data-role="develop" data-step="0">
+      <span class="checkbox-custom"></span>
+      <div class="checkbox-text">
+        <strong>Reto 1 (Lectura de datos):</strong> Lograr que la placa lee los valores de luz y humedad y los muestre en el monitor de tu ordenador.
+      </div>
+    </label>
+    
+    <!-- Reto 2 -->
+    <label class="checklist-item challenge-item">
+      <input type="checkbox" class="step-checkbox" data-role="develop" data-step="1">
+      <span class="checkbox-custom"></span>
+      <div class="checkbox-text">
+        <strong>Reto 2 (Automatización de la luz):</strong> Programar un <a href="#glosario-condicional" class="glosario-link">condicional</a> para que, si el nivel de luz exterior baja del 30%, los LEDs interiores se enciendan automáticamente.
+      </div>
+    </label>
+    
+    <!-- Reto 3 -->
+    <label class="checklist-item challenge-item">
+      <input type="checkbox" class="step-checkbox" data-role="develop" data-step="2">
+      <span class="checkbox-custom"></span>
+      <div class="checkbox-text">
+        <strong>Reto 3 (El Riego Inteligente):</strong> Programar el código para que, si el sensor detecta tierra seca, el relé active la bomba de agua durante 5 segundos y luego se detenga en un <a href="#glosario-bucle" class="glosario-link">bucle</a> de comprobación.
+      </div>
+    </label>
+    
+    <!-- Reto Extra IoT -->
+    <label class="checklist-item challenge-item">
+      <input type="checkbox" class="step-checkbox" data-role="develop" data-step="3">
+      <span class="checkbox-custom"></span>
+      <div class="checkbox-text">
+        <strong>🚀 Reto Extra IoT (Altas Capacidades):</strong> Conectar un módulo Wi-Fi a tu Arduino para subir las lecturas de humedad en tiempo real a la plataforma en la nube ThingSpeak.
+      </div>
+    </label>
+  </div>
+
+  <div class="certification-panel border-develop-dim">
+    <div class="cert-status-row">
+      <span class="mono">AUDITORÍA DE ACADEMIA:</span>
+      <span class="cert-indicator mono text-danger" id="dev-cert-indicator">INCOMPLETA</span>
+    </div>
+    <button class="btn-certify btn-develop-glow" id="btn-certify-develop" disabled style="width: 100%;">
+      Firmar y Certificar Misión de Programación
+    </button>
+    <div class="console-terminal-log mono" id="terminal-develop">
+      > Esperando a completar todos los objetivos del plan de vuelo...
+    </div>
+  </div>
+</section>
+
+<script src="./RetosBlock.js"></script>

@@ -2,39 +2,40 @@
 import Layout from '../layouts/Layout.astro';
 import ThemeToggle from '../components/molecules/ThemeToggle/ThemeToggle.astro';
 import HubGrid from '../components/organisms/HubGrid/HubGrid.astro';
+import './recursos.css';
 
 const tfmCards = [
   {
-    title: 'Portal de la Academia (Fichas Jigsaw)',
-    description: 'Acceso a las fichas de especialización técnica individuales por roles (Diseño CAD, Programación/Debugging y Construcción/PRL) para el minireto.',
+    title: 'Portal de la Academia (Guías de Especialización)',
+    description: 'Acceso a los dossiers de especialización técnica individualizados por roles: Modelado CAD (Tinkercad), Algorítmica y Depuración (ArduinoBlocks), y Mecanizado Seguro (PRL en el Aula-Taller) para la resolución de los miniretos autónomos de la técnica Jigsaw.',
     index: '01',
     href: '/sa8/actividad2/toolbox',
     actionText: 'Ver Especialidades',
-    dotTag: { text: 'FICHAS JIGSAW', colorClass: 'dot-purple' }
+    dotTag: { text: 'APRENDIZAJE COOPERATIVO', colorClass: 'dot-purple' }
   },
   {
     title: 'App de Test: Repetición Espaciada',
-    description: 'Prototipo de la aplicación interactiva que dosifica preguntas teóricas personalizadas según la curva de olvido y el progreso del alumno.',
+    description: 'Prototipo funcional de la aplicación interactiva para la consolidación de los saberes teóricos y conceptuales. El algoritmo personaliza el feedback inmediato desestigmatizando el error y automatiza la recuperación según la curva de olvido del estudiante.',
     index: '02',
     href: '/spaced-repetition-app/demostracion',
     actionText: 'Probar Aplicación',
     dotTag: { text: 'INSTRUCCIÓN ADAPTATIVA', colorClass: 'dot-green' }
   },
   {
-    title: 'Rúbricas y Dianas del Proyecto',
-    description: 'Desglose de la rúbrica técnica del prototipo Maker con doble puntuación por rol, dianas de coevaluación y listas de cotejo diarias.',
+    title: 'Matrices y Dianas de Evaluación',
+    description: 'Desglose multinivel de la rúbrica técnica del prototipo (Biodomo) con doble ponderación por corresponsabilidad de rol, dianas digitales para la coevaluación del Pitch en tiempo real y listas de cotejo para el desempeño actitudinal diario.',
     index: '03',
     href: '/sa8/actividad3/rubrica_prototipo',
-    actionText: 'Descargar Rúbricas',
-    dotTag: { text: 'HERRAMIENTAS DE EVALUACIÓN', colorClass: 'dot-yellow' }
+    actionText: 'Explorar Instrumentos',
+    dotTag: { text: 'EVALUACIÓN AUTÉNTICA', colorClass: 'dot-yellow' }
   },
   {
     title: 'Cuadro de Mando de Calificación',
-    description: 'Plantilla operativa para la triangulación de notas de la SA, aplicando la ponderación legal LOMLOE y los criterios de evaluación disociada.',
+    description: 'Cuadro de registro automatizado para la triangulación operativa de datos de la SA. Integra las ponderaciones competenciales normativas del currículo de Andalucía y aplica de forma matemática el algoritmo de la evaluación disociada.',
     index: '04',
     href: '/sa8/calificacion/demostracion',
-    actionText: 'Abrir Calificador',
-    dotTag: { text: 'ANALÍTICA DE DATOS', colorClass: 'dot-white' }
+    actionText: 'Abrir Cuadro de Mando',
+    dotTag: { text: 'ANALÍTICA DE APRENDIZAJE', colorClass: 'dot-white' }
   }
 ];
 
@@ -64,10 +65,10 @@ const hubUrl = import.meta.env.PUBLIC_HUB_URL || 'https://joseceballos.link';
       <!-- Title Section -->
       <section class="title-section">
         <h1 class="page-title">
-          Recursos Didácticos de la SA
+          Ecosistema de Recursos Didácticos de la SA
         </h1>
         <p class="page-subtitle">
-          Ecosistema de materiales, herramientas de evaluación y analíticas diseñadas para la unidad El Invernadero Automatizado.
+          Repositorio técnico y pedagógico de materiales interactivos, instrumentos de evaluación auténtica y analíticas de aprendizaje diseñadas para la Unidad "El Invernadero Automatizado" (Misión a Marte).
         </p>
       </section>
       
@@ -85,169 +86,9 @@ const hubUrl = import.meta.env.PUBLIC_HUB_URL || 'https://joseceballos.link';
         <div class="footer-links mono">
           <a href="#privacy" class="footer-link">Privacy</a>
           <a href="#terms" class="footer-link">Terms</a>
-          <a href="#archive" class="footer-link">Archive {`{GH}[IN]`}</a>
+          <a href="#archive" class="footer-link">Archive &#123;GH&#125;[IN]</a>
         </div>
       </div>
     </footer>
   </div>
 </Layout>
-
-<style>
-  .site-wrapper {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  
-  /* Sub-Hub Header */
-  .subhub-header {
-    border-bottom: 1px solid hsl(var(--border-color));
-    padding: 1.5rem 0;
-    width: 100%;
-  }
-  
-  .header-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .back-link {
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: hsl(var(--text-secondary));
-    text-decoration: none;
-    transition: var(--transition-smooth);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  
-  .back-link:hover {
-    color: hsl(var(--accent-primary));
-  }
-  
-  .back-link .arrow {
-    transition: transform 0.2s ease;
-  }
-  
-  .back-link:hover .arrow {
-    transform: translateX(-3px);
-  }
-  
-  .breadcrumbs {
-    font-size: 0.75rem;
-    color: hsl(var(--text-muted));
-  }
-  
-  .breadcrumbs .active {
-    color: hsl(var(--text-primary));
-    font-weight: 700;
-  }
-  
-  .toggle-container {
-    display: flex;
-    align-items: center;
-  }
-  
-  /* Main Content */
-  .main-content {
-    flex-grow: 1;
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
-    padding: 3.5rem 2rem 5rem 2rem;
-  }
-  
-  .title-section {
-    margin-bottom: 3.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .page-title {
-    font-size: 3.25rem;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    color: hsl(var(--text-primary));
-    line-height: 1.1;
-  }
-  
-  .page-subtitle {
-    font-size: 1.15rem;
-    line-height: 1.6;
-    color: hsl(var(--text-secondary));
-    max-width: 800px;
-  }
-  
-  /* Footer Custom style */
-  .main-footer {
-    border-top: 1px solid hsl(var(--border-color));
-    padding: 2.5rem 0;
-    width: 100%;
-    margin-top: 5rem;
-  }
-  
-  .footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .footer-left {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-  }
-  
-  .brand {
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: hsl(var(--accent-primary)); /* Green */
-  }
-  
-  .copyright {
-    font-size: 0.75rem;
-    color: hsl(var(--text-muted));
-  }
-  
-  .footer-links {
-    display: flex;
-    gap: 1.5rem;
-  }
-  
-  .footer-link {
-    font-size: 0.75rem;
-    color: hsl(var(--text-muted));
-    text-decoration: none;
-    transition: var(--transition-smooth);
-  }
-  
-  .footer-link:hover {
-    color: hsl(var(--text-primary));
-  }
-  
-  @media (max-width: 768px) {
-    .header-container {
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-    
-    .footer-container {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 1.5rem;
-    }
-    
-    .page-title {
-      font-size: 2.25rem;
-    }
-  }
-</style>

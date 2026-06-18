@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Footer from '../../components/organisms/Footer/Footer.astro';
+import './demostracion.css';
 ---
 
 <Layout title="TFM Recursos | Demostración Repetición Espaciada">
@@ -36,65 +37,309 @@ import Footer from '../../components/organisms/Footer/Footer.astro';
             <div class="question-card glass">
               <div class="card-header-meta">
                 <span class="level-badge mono">[NIVEL_01: CADETE]</span>
-                <span class="topic-tag mono">Electricidad Básica</span>
+                <span class="topic-tag mono">Sensores</span>
               </div>
-              <h3 class="question-title">¿Qué puerto de la placa Arduino Nano proporciona una alimentación constante de 5V de corriente continua?</h3>
+              <h3 class="question-title">¿Por qué se ha seleccionado un sensor de humedad de suelo de tipo capacitivo (v1.2) para el Biodomo en lugar de uno tradicional de tipo resistivo?</h3>
               <div class="options-list">
-                <button class="option-btn mono" data-correct="false">A) Puerto GND</button>
-                <button class="option-btn mono" data-correct="true">B) Puerto 5V</button>
-                <button class="option-btn mono" data-correct="false">C) Puerto analógico A0</button>
+                <button class="option-btn mono" data-correct="false" data-feedback="Incorrecto. Ambos sensores devuelven una señal analógica de voltaje; la diferencia radica en el principio físico de medición.">
+                  A) Porque el capacitivo lee valores digitales directo en lugar de analógicos.
+                </button>
+                <button class="option-btn mono" data-correct="true" data-feedback="¡Excelente! Al no hacer pasar corriente directamente a través de la tierra, el sensor capacitivo no se degrada, garantizando mediciones estables a largo plazo en sistemas hidropónicos.">
+                  B) Porque el resistivo sufre de corrosión por electrólisis al estar expuesto al sustrato húmedo, mientras que el capacitivo aísla sus pistas de cobre.
+                </button>
+                <button class="option-btn mono" data-correct="false" data-feedback="Incorrecto. El consumo de corriente es despreciable en ambos casos; el criterio de selección es la vida útil y la resistencia a la oxidación.">
+                  C) Porque el capacitivo consume menos corriente de la placa Arduino Nano.
+                </button>
+                <button class="option-btn mono" data-correct="false" data-feedback="Incorrecto. Ambos sensores operan perfectamente en el rango de 3.3V a 5V de Arduino.">
+                  D) Porque el resistivo no es compatible con placas que operen a 5V.
+                </button>
               </div>
               <div class="feedback-box locked-feedback green-feedback">
                 <strong>[RETROALIMENTACIÓN ADAPTATIVA]</strong><br/>
-                ¡Excelente! El pin 5V suministra voltaje regulado constante. GND es tierra (0V) y A0 lee entradas variables.
+                <span class="feedback-text"></span>
               </div>
               <div class="feedback-box locked-feedback red-feedback">
                 <strong>[ERROR DETECTADO - BUCLE DE RECUPERACIÓN]</strong><br/>
-                ¡Cuidado! Recuerda que GND es el polo negativo (0V) y A0 sirve para medir lecturas. El pin que alimenta con corriente continua es 5V.
+                <span class="feedback-text"></span>
               </div>
             </div>
 
             <!-- Question 2 -->
             <div class="question-card glass">
               <div class="card-header-meta">
-                <span class="level-badge mono">[NIVEL_02: ESPECIALISTA]</span>
-                <span class="topic-tag mono">Algorítmica</span>
+                <span class="level-badge mono">[NIVEL_02: CADETE]</span>
+                <span class="topic-tag mono">Arquitectura de Sistemas</span>
               </div>
-              <h3 class="question-title">Si el sensor analógico devuelve valores de 0 (seco) a 1023 (agua), ¿qué umbral representa el 30% de humedad para activar el riego por goteo?</h3>
+              <h3 class="question-title">Al conectar el pin de salida analógica (AO) del sensor de luminosidad LDR a la placa Arduino Nano, ¿qué rango de valores numéricos enteros procesará el algoritmo y por qué?</h3>
               <div class="options-list">
-                <button class="option-btn mono" data-correct="true">A) Por debajo de 307</button>
-                <button class="option-btn mono" data-correct="false">B) Por encima de 307</button>
-                <button class="option-btn mono" data-correct="false">C) Por debajo de 30</button>
+                <button class="option-btn mono" data-correct="false" data-feedback="Incorrecto. Estás confundiendo la resolución de lectura del ADC con la resolución de escritura de las salidas PWM.">
+                  A) De 0 a 255, porque el Conversor Analógico-Digital (ADC) de Arduino es de 8 bits.
+                </button>
+                <button class="option-btn mono" data-correct="false" data-feedback="Incorrecto. El voltaje físico se traduce internamente en un valor entero digitalizado para que el procesador pueda operar con él.">
+                  B) De 0 a 5, porque el sensor entrega un voltaje directo de entre 0V y 5V CC.
+                </button>
+                <button class="option-btn mono" data-correct="true" data-feedback="¡Exacto! La placa cuantifica el voltaje de entrada (0V a 5V) en una escala discreta de 1024 niveles, donde 0 representa 0V y 1023 representa 5V.">
+                  C) De 0 a 1023, porque el ADC de la placa Arduino Nano cuenta con una resolución de 10 bits (2<sup>10</sup> = 1024 escalones).
+                </button>
+                <button class="option-btn mono" data-correct="false" data-feedback="Incorrecto. El mapeo a porcentaje (0-100%) requiere un bloque matemático explícito diseñado por el programador.">
+                  D) De 0 a 100, porque las variables de ArduinoBlocks calculan automáticamente el porcentaje de luz.
+                </button>
               </div>
               <div class="feedback-box locked-feedback green-feedback">
                 <strong>[RETROALIMENTACIÓN ADAPTATIVA]</strong><br/>
-                ¡Correcto! 307 equivale aproximadamente al 30% de 1023. Al buscar riego cuando falte agua, se evalúa si es menor (por debajo de).
+                <span class="feedback-text"></span>
               </div>
               <div class="feedback-box locked-feedback red-feedback">
                 <strong>[ERROR DETECTADO - BUCLE DE RECUPERACIÓN]</strong><br/>
-                Inténtalo de nuevo. Recuerda aplicar la regla de tres (1023 * 0.30 = 307). Para regar en seco, debe caer por debajo de ese umbral.
+                <span class="feedback-text"></span>
               </div>
             </div>
 
             <!-- Question 3 -->
             <div class="question-card glass">
               <div class="card-header-meta">
-                <span class="level-badge mono">[NIVEL_03: COMANDANTE]</span>
-                <span class="topic-tag mono">Sistemas e Histéresis</span>
+                <span class="level-badge mono">[NIVEL_03: ESPECIALISTA]</span>
+                <span class="topic-tag mono">Actuación de Potencia</span>
               </div>
-              <h3 class="question-title">Para evitar que el relé de la bomba oscile rápidamente cuando la humedad está en el límite exacto, ¿qué técnica lógica de programación aplicamos?</h3>
+              <h3 class="question-title">¿Cuál es la función principal de integrar un módulo Relé de 1 canal en el circuito de la bomba peristáltica de riego?</h3>
               <div class="options-list">
-                <button class="option-btn mono" data-correct="false">A) Reducir la tensión a 3.3V</button>
-                <button class="option-btn mono" data-correct="true">B) Implementar histéresis (dos umbrales) y un delay</button>
-                <button class="option-btn mono" data-correct="false">C) Aumentar la frecuencia de lectura del sensor</button>
+                <button class="option-btn mono" data-correct="false" data-feedback="Incorrecto. El relé actúa únicamente como un interruptor de encendido/apagado, no regula la velocidad del motor.">
+                  A) Aumentar la velocidad de rotación de los rodillos mecánicos de la bomba.
+                </button>
+                <button class="option-btn mono" data-correct="true" data-feedback="¡Impecable! Al separar físicamente el circuito de control (baja potencia) del circuito de fuerza (alta potencia), protegemos la placa de picos de corriente.">
+                  B) Actuar como un puente de potencia y aislamiento eléctrico, permitiendo que una señal de 5V de Arduino controle un circuito externo independiente de 12V.
+                </button>
+                <button class="option-btn mono" data-correct="false" data-feedback="Incorrecto. Todo el sistema del Biodomo opera bajo corriente continua de baja tensión; el relé no altera la naturaleza de la onda.">
+                  C) Convertir la corriente continua (CC) del circuito en corriente alterna (CA).
+                </button>
+                <button class="option-btn mono" data-correct="false" data-feedback="Incorrecto. Esa función correspondería a un condensador o a una batería de respaldo; el relé no retiene carga.">
+                  D) Almacenar energía eléctrica para mantener el riego activo si falla el suministro principal.
+                </button>
               </div>
               <div class="feedback-box locked-feedback green-feedback">
                 <strong>[RETROALIMENTACIÓN ADAPTATIVA]</strong><br/>
-                ¡Perfecto! La histéresis crea un rango estable (encender a 300, apagar a 350) que protege los componentes mecánicos de desgastes rápidos.
+                <span class="feedback-text"></span>
               </div>
               <div class="feedback-box locked-feedback red-feedback">
                 <strong>[ERROR DETECTADO - BUCLE DE RECUPERACIÓN]</strong><br/>
-                Fallo crítico. La conmutación rápida daña el relé. Debes crear un margen lógico (histéresis) definiendo un umbral de arranque y otro de parada.
+                <span class="feedback-text"></span>
+              </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question-card glass">
+              <div class="card-header-meta">
+                <span class="level-badge mono">[NIVEL_04: ESPECIALISTA]</span>
+                <span class="topic-tag mono">Algorítmica</span>
+              </div>
+              <h3 class="question-title">En ArduinoBlocks, ¿qué consecuencia tiene utilizar el bloque Esperar (Delay) de 5000 ms inmediatamente después de activar la bomba de agua dentro del bucle principal (Bucle)?</h3>
+              <div class="options-list">
+                <button class="option-btn mono" data-correct="false" data-feedback="Incorrecto. El procesador detiene sus operaciones útiles, no se optimiza.">
+                  A) El programa se ejecuta más rápido al liberar de carga al procesador.
+                </button>
+                <button class="option-btn mono" data-correct="true" data-feedback="¡Gran análisis! El bloque Esperar es de naturaleza bloqueante. Durante ese tiempo, la CPU entra en un bucle cerrado de reloj y queda ciega ante cualquier otra entrada.">
+                  B) Congela por completo la ejecución del código durante 5 segundos, impidiendo que el sistema lea otros sensores (como alarmas de temperatura o luz) durante ese intervalo.
+                </button>
+                <button class="option-btn mono" data-correct="false" data-feedback="Incorrecto. La bomba se limitará a quedarse encendida en el mismo estado en el que estaba antes de invocar la espera.">
+                  C) Permite que la bomba module su caudal de forma progresiva según pase el tiempo.
+                </button>
+                <button class="option-btn mono" data-correct="false" data-feedback="Incorrecto. Para ejecutar tareas paralelas o síncronas sin bloquear el hilo principal, se deben emplear temporizadores o bloques de la pestaña 'Tareas'.">
+                  D) Crea de forma automática una tarea en segundo plano que se ejecuta en paralelo.
+                </button>
+              </div>
+              <div class="feedback-box locked-feedback green-feedback">
+                <strong>[RETROALIMENTACIÓN ADAPTATIVA]</strong><br/>
+                <span class="feedback-text"></span>
+              </div>
+              <div class="feedback-box locked-feedback red-feedback">
+                <strong>[ERROR DETECTADO - BUCLE DE RECUPERACIÓN]</strong><br/>
+                <span class="feedback-text"></span>
+              </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question-card glass">
+              <div class="card-header-meta">
+                <span class="level-badge mono">[NIVEL_05: ESPECIALISTA]</span>
+                <span class="topic-tag mono">Fotobiología y Potencia</span>
+              </div>
+              <h3 class="question-title">Para regular la intensidad de la tira LED Full Spectrum (simulando un amanecer progresivo), conectamos un controlador MOSFET IRF520. ¿Qué técnica de control utilizaremos en nuestro código?</h3>
+              <div class="options-list">
+                <button class="option-btn mono" data-correct="true" data-feedback="¡Brillante! La técnica PWM conmuta el pin digital a una frecuencia tan alta que simula una variación analógica de voltaje, regulando la energía que el MOSFET entrega a los LEDs.">
+                  A) Modulación por Ancho de Pulsos (PWM), variando el ciclo de trabajo (duty cycle) de la señal digital.
+                </button>
+                <button class="option-btn mono" data-correct="false" data-feedback="Incorrecto. La frecuencia de la placa es fija (16 MHz) y alterarla comprometería la estabilidad de todo el sistema de control.">
+                  B) Modificación de la frecuencia de reloj del cristal de cuarzo de Arduino.
+                </button>
+                <button class="option-btn mono" data-correct="false" data-feedback="Incorrecto. El MOSFET conmuta electrónicamente en estados de saturación y corte; no requiere ningún elemento mecánico externo.">
+                  C) Variación de la resistencia interna del transistor mediante un servo digital.
+                </button>
+                <button class="option-btn mono" data-correct="false" data-feedback="Incorrecto. Una conmutación estática simple solo permitiría encender y apagar la luz de golpe, eliminando la posibilidad de realizar un degradado progresivo.">
+                  D) Conmutación binaria simple empleando condicionales booleanos estáticos.
+                </button>
+              </div>
+              <div class="feedback-box locked-feedback green-feedback">
+                <strong>[RETROALIMENTACIÓN ADAPTATIVA]</strong><br/>
+                <span class="feedback-text"></span>
+              </div>
+              <div class="feedback-box locked-feedback red-feedback">
+                <strong>[ERROR DETECTADO - BUCLE DE RECUPERACIÓN]</strong><br/>
+                <span class="feedback-text"></span>
+              </div>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="question-card glass">
+              <div class="card-header-meta">
+                <span class="level-badge mono">[NIVEL_06: ESPECIALISTA]</span>
+                <span class="topic-tag mono">Electrónica Avanzada</span>
+              </div>
+              <h3 class="question-title">El módulo sensor LDR incluye un potenciómetro azul integrado en su placa junto a un chip LM393. ¿Para qué sirve mecánicamente este componente?</h3>
+              <div class="options-list">
+                <button class="option-btn mono" data-correct="false" data-feedback="Incorrecto. El módulo se alimenta a un voltaje fijo de 3.3V o 5V; el potenciómetro no altera la entrada principal de corriente.">
+                  A) Para regular el voltaje de alimentación que recibe el fotorresistor.
+                </button>
+                <button class="option-btn mono" data-correct="true" data-feedback="¡Correcto! El chip LM393 es un comparador de tensión. Al girar el potenciómetro cambiamos el voltaje de referencia, permitiendo calibrar la sensibilidad del sensor sin tocar el código escrito.">
+                  B) Para ajustar manualmente el umbral de disparo de la salida digital (DO), determinando con precisión a qué nivel de oscuridad se activa la señal alta.
+                </button>
+                <button class="option-btn mono" data-correct="false" data-feedback="Incorrecto. El módulo LDR analógico/digital no utiliza protocolo de comunicación por bus I2C; sus salidas son directas por hilos dedicados.">
+                  C) Para cambiar la dirección I2C del módulo en el bus de datos de la tripulación.
+                </button>
+                <button class="option-btn mono" data-correct="false" data-feedback="Incorrecto. El potenciómetro no actúa como un amplificador operacional de ganancia; es un divisor de tensión ajustable para el comparador.">
+                  D) Para amplificar la señal analógica y que pueda alcanzar distancias mayores a 10 metros.
+                </button>
+              </div>
+              <div class="feedback-box locked-feedback green-feedback">
+                <strong>[RETROALIMENTACIÓN ADAPTATIVA]</strong><br/>
+                <span class="feedback-text"></span>
+              </div>
+              <div class="feedback-box locked-feedback red-feedback">
+                <strong>[ERROR DETECTADO - BUCLE DE RECUPERACIÓN]</strong><br/>
+                <span class="feedback-text"></span>
+              </div>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="question-card glass">
+              <div class="card-header-meta">
+                <span class="level-badge mono">[NIVEL_07: COMANDANTE]</span>
+                <span class="topic-tag mono">Algorítmica</span>
+              </div>
+              <h3 class="question-title">¿Cuál es la diferencia estructural y de flujo de ejecución entre las funciones de control Inicializar (Setup) y Bucle (Loop) en el entorno de desarrollo?</h3>
+              <div class="options-list">
+                <button class="option-btn mono" data-correct="false" data-feedback="Incorrecto. Ambas funciones son secuenciales y forman parte del núcleo principal del firmware; no son sistemas de gestión de excepciones aislados.">
+                  A) Inicializar se ejecuta en paralelo a todas las tareas y Bucle solo actúa cuando detecta un fallo en el hardware.
+                </button>
+                <button class="option-btn mono" data-correct="true" data-feedback="¡Excelente! En Inicializar preparamos la casa (configuramos pines de entrada/salida, iniciamos comunicaciones), y en Bucle ejecutamos la lógica de control del biodomo una y otra vez.">
+                  B) Inicializar se ejecuta una única vez al encender o resetear la placa para configurar los periféricos; Bucle se ejecuta infinitamente en orden secuencial mientras el sistema tenga energía.
+                </button>
+                <button class="option-btn mono" data-correct="false" data-feedback="Incorrecto. El tipo de señal (analógica o digital) no determina la función donde se lee; se pueden realizar lecturas en ambas según las necesidades del algoritmo.">
+                  C) Bucle procesa las señales analógicas e Inicializar se encarga exclusivamente de las entradas de tipo digital.
+                </button>
+                <button class="option-btn mono" data-correct="false" data-feedback="Incorrecto. El flujo de ejecución de la arquitectura AVR es estrictamente determinista y sigue siempre el mismo orden secuencial de arranque.">
+                  D) Ambas funciones son idénticas y el procesador del Arduino Nano elige cuál ejecutar de forma aleatoria según la temperatura del chip.
+                </button>
+              </div>
+              <div class="feedback-box locked-feedback green-feedback">
+                <strong>[RETROALIMENTACIÓN ADAPTATIVA]</strong><br/>
+                <span class="feedback-text"></span>
+              </div>
+              <div class="feedback-box locked-feedback red-feedback">
+                <strong>[ERROR DETECTADO - BUCLE DE RECUPERACIÓN]</strong><br/>
+                <span class="feedback-text"></span>
+              </div>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="question-card glass">
+              <div class="card-header-meta">
+                <span class="level-badge mono">[NIVEL_08: COMANDANTE]</span>
+                <span class="topic-tag mono">Fotobiología</span>
+              </div>
+              <h3 class="question-title">Las tiras de iluminación LED seleccionadas para el Biodomo emiten una luz de color rosa/magenta muy característica. ¿A qué se debe científicamente este diseño lumínico?</h3>
+              <div class="options-list">
+                <button class="option-btn mono" data-correct="false" data-feedback="Incorrecto. La iluminación responde a un criterio puramente fisiológico y de eficiencia energética vegetal, no a una señalización de peligro.">
+                  A) Es un código estético visual diseñado por la tripulación para indicar que la atmósfera interior es rica en dióxido de carbono.
+                </button>
+                <button class="option-btn mono" data-correct="true" data-feedback="¡Fabuloso! Las plantas reflejan el color verde (por eso las vemos así) y aprovechan el rojo y el azul. Emitir solo en esas bandas optimiza cada vatio eléctrico consumido en la base marciana.">
+                  B) Concentra su emisión en las longitudes de onda del Azul (~450nm) y el Rojo (~660nm), picos exactos donde la clorofila A y B de las plantas absorbe la energía para la fotosíntesis.
+                </button>
+                <button class="option-btn mono" data-correct="false" data-feedback="Incorrecto. La iluminación LED apenas genera calor por radiación infrarroja; la evaporación del agua se gestiona mediante el módulo de ventilación.">
+                  C) El color rosa acelera el secado del exceso de agua acumulada por la bomba de riego en las raíces.
+                </button>
+                <button class="option-btn mono" data-correct="false" data-feedback="Incorrecto. El espectro visible rosa no guarda relación con la respuesta de frecuencia de los sensores de gases o temperatura encapsulados.">
+                  D) Permite que los sensores infrarrojos de calibración ambiental no sufran interferencias ópticas durante el día.
+                </button>
+              </div>
+              <div class="feedback-box locked-feedback green-feedback">
+                <strong>[RETROALIMENTACIÓN ADAPTATIVA]</strong><br/>
+                <span class="feedback-text"></span>
+              </div>
+              <div class="feedback-box locked-feedback red-feedback">
+                <strong>[ERROR DETECTADO - BUCLE DE RECUPERACIÓN]</strong><br/>
+                <span class="feedback-text"></span>
+              </div>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="question-card glass">
+              <div class="card-header-meta">
+                <span class="level-badge mono">[NIVEL_09: COMANDANTE]</span>
+                <span class="topic-tag mono">Conectividad y Protocolos</span>
+              </div>
+              <h3 class="question-title">Al conectar el sensor de temperatura y humedad DHT22 a la placa Arduino Nano, el esquema técnico exige colocar una resistencia de 10kΩ en paralelo entre el pin de Alimentación (VCC) y el pin de Datos (DATA). ¿Cómo se denomina técnicamente esta configuración?</h3>
+              <div class="options-list">
+                <button class="option-btn mono" data-correct="false" data-feedback="Incorrecto. Una resistencia shunt se coloca en serie con la carga para medir caídas de tensión y calcular consumos; no es el caso.">
+                  A) Resistencia Shunt de derivación de corriente para protección térmica.
+                </button>
+                <button class="option-btn mono" data-correct="true" data-feedback="¡Brillante! El protocolo de comunicación de un solo hilo (Single-Bus) del DHT22 requiere que la línea esté por defecto en nivel alto para evitar lecturas erróneas producto del ruido electromagnético ambiental.">
+                  B) Configuración de Resistencia de Pull-up, utilizada para mantener la línea de datos en un estado lógico alto estable en ausencia de transmisión del sensor.
+                </button>
+                <button class="option-btn mono" data-correct="false" data-feedback="Incorrecto. El DHT22 transmite una trama de datos puramente digital (ceros y unos digitales); la resistencia no actúa como un filtro analógico pasabanda.">
+                  C) Red de amortiguación de frecuencias para el filtrado de ruidos analógicos.
+                </button>
+                <button class="option-btn mono" data-correct="false" data-feedback="Incorrecto. Si fuera una resistencia de pull-down, estaría conectada entre el pin de DATOS y TIERRA (GND), forzando el estado inverso al que requiere este protocolo.">
+                  D) Resistencia de Pull-down para forzar un nivel lógico cero permanente en la placa.
+                </button>
+              </div>
+              <div class="feedback-box locked-feedback green-feedback">
+                <strong>[RETROALIMENTACIÓN ADAPTATIVA]</strong><br/>
+                <span class="feedback-text"></span>
+              </div>
+              <div class="feedback-box locked-feedback red-feedback">
+                <strong>[ERROR DETECTADO - BUCLE DE RECUPERACIÓN]</strong><br/>
+                <span class="feedback-text"></span>
+              </div>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="question-card glass">
+              <div class="card-header-meta">
+                <span class="level-badge mono">[NIVEL_10: COMANDANTE]</span>
+                <span class="topic-tag mono">Estructuras de Datos</span>
+              </div>
+              <h3 class="question-title">En nuestro algoritmo de control, deseamos crear una bandera lógica para registrar si la compuerta de ventilación está abierta o cerrada. ¿Qué tipo de datos es el adecuado para optimizar la memoria SRAM del Arduino Nano?</h3>
+              <div class="options-list">
+                <button class="option-btn mono" data-correct="false" data-feedback="Incorrecto. Una compuerta solo tiene dos estados posibles (abierta/cerrada); usar decimales consume 4 bytes de memoria innecesariamente.">
+                  A) Tipo Float (Punto flotante), para almacenar valores con decimales de alta precisión.
+                </button>
+                <button class="option-btn mono" data-correct="false" data-feedback="Incorrecto. El uso de cadenas de texto es extremadamente ineficiente en microcontroladores con recursos limitados como el ATmega328P de la placa Nano.">
+                  A) Tipo String (Cadena de texto), para poder escribir textualmente las palabras "ABIERTA" o "CERRADA".
+                </button>
+                <button class="option-btn mono" data-correct="true" data-feedback="¡Excelente criterio de ingeniería! Las variables booleanas son la forma más eficiente y limpia de gestionar estados binarios de actuadores y banderas de control en sistemas embebidos.">
+                  C) Tipo Booleano (Boolean / bool), ya que solo almacena dos estados lógicos discretos: Verdadero (1 / Abierto) o Falso (0 / Cerrado), ocupando el mínimo espacio en memoria.
+                </button>
+                <button class="option-btn mono" data-correct="false" data-feedback="Incorrecto. Un array o matriz está diseñado para almacenar colecciones de múltiples datos indexados; para una bandera binaria simple es una sobreestructura inútil.">
+                  D) Tipo Array de enteros de base decimal indexados secuencialmente.
+                </button>
+              </div>
+              <div class="feedback-box locked-feedback green-feedback">
+                <strong>[RETROALIMENTACIÓN ADAPTATIVA]</strong><br/>
+                <span class="feedback-text"></span>
+              </div>
+              <div class="feedback-box locked-feedback red-feedback">
+                <strong>[ERROR DETECTADO - BUCLE DE RECUPERACIÓN]</strong><br/>
+                <span class="feedback-text"></span>
               </div>
             </div>
 
@@ -123,11 +368,21 @@ import Footer from '../../components/organisms/Footer/Footer.astro';
           redFeedback.style.display = 'none';
           
           const isCorrect = btn.getAttribute('data-correct') === 'true';
+          const feedbackText = btn.getAttribute('data-feedback');
+          
           if (isCorrect) {
             btn.classList.add('selected-correct');
+            const feedbackSpan = greenFeedback.querySelector('.feedback-text');
+            if (feedbackSpan) {
+              feedbackSpan.innerHTML = feedbackText;
+            }
             greenFeedback.style.display = 'block';
           } else {
             btn.classList.add('selected-incorrect');
+            const feedbackSpan = redFeedback.querySelector('.feedback-text');
+            if (feedbackSpan) {
+              feedbackSpan.innerHTML = feedbackText;
+            }
             redFeedback.style.display = 'block';
           }
         });
@@ -135,214 +390,3 @@ import Footer from '../../components/organisms/Footer/Footer.astro';
     });
   });
 </script>
-
-<style>
-  .site-wrapper {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  
-  .subhub-header {
-    border-bottom: 1px solid hsl(var(--border-color));
-    padding: 1.5rem 0;
-  }
-  
-  .header-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .back-link {
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: hsl(var(--text-secondary));
-    text-decoration: none;
-    transition: var(--transition-smooth);
-  }
-  
-  .back-link:hover {
-    color: hsl(var(--accent-primary));
-  }
-  
-  .breadcrumbs {
-    font-size: 0.75rem;
-    color: hsl(var(--text-muted));
-  }
-  
-  .breadcrumbs .active {
-    color: hsl(var(--text-primary));
-    font-weight: 700;
-  }
-  
-  .main-content {
-    flex-grow: 1;
-    max-width: 1000px;
-    margin: 0 auto;
-    width: 100%;
-    padding: 3.5rem 2rem;
-  }
-  
-  .resource-article {
-    display: flex;
-    flex-direction: column;
-    gap: 3.5rem;
-  }
-  
-  .article-header {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-    border-bottom: 1px solid hsl(var(--border-color));
-    padding-bottom: 2rem;
-  }
-  
-  .tag-badge {
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    padding: 0.25rem 0.65rem;
-    border-radius: 2px;
-    background-color: rgba(255, 255, 255, 0.02);
-    border: 1px solid;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  
-  .dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    display: inline-block;
-  }
-  
-  .dot-green {
-    color: hsl(var(--accent-primary));
-    border-color: rgba(0, 255, 65, 0.25);
-  }
-  .dot-green .dot {
-    background-color: hsl(var(--accent-primary));
-  }
-  
-  .article-title {
-    font-size: 2.75rem;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    color: hsl(var(--text-primary));
-  }
-  
-  .article-lead {
-    font-size: 1.15rem;
-    line-height: 1.5;
-    color: hsl(var(--text-secondary));
-  }
-  
-  .content-section {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  
-  .questions-stack {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-  
-  .question-card {
-    padding: 2rem;
-    border-radius: 2px;
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-  }
-  
-  .card-header-meta {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.75rem;
-  }
-  
-  .level-badge {
-    color: hsl(var(--accent-tertiary));
-    font-weight: 700;
-  }
-  
-  .topic-tag {
-    color: hsl(var(--text-muted));
-  }
-  
-  .question-title {
-    font-size: 1.15rem;
-    font-weight: 600;
-    color: hsl(var(--text-primary));
-    line-height: 1.4;
-  }
-  
-  .options-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-  
-  .option-btn {
-    text-align: left;
-    padding: 0.75rem 1.25rem;
-    font-size: 0.85rem;
-    background-color: hsl(var(--bg-secondary));
-    border: 1px solid hsl(var(--border-color));
-    color: hsl(var(--text-primary));
-    cursor: pointer;
-    border-radius: 2px;
-    transition: var(--transition-smooth);
-    outline: none;
-  }
-  
-  .option-btn:hover {
-    border-color: hsl(var(--text-secondary));
-  }
-  
-  .selected-correct {
-    background-color: rgba(0, 255, 65, 0.1) !important;
-    border-color: hsl(var(--accent-primary)) !important;
-    color: #fff !important;
-  }
-  
-  .selected-incorrect {
-    background-color: rgba(239, 68, 68, 0.1) !important;
-    border-color: #ef4444 !important;
-    color: #fff !important;
-  }
-  
-  .feedback-box {
-    display: none;
-    padding: 1.25rem;
-    border-radius: 2px;
-    font-size: 0.85rem;
-    line-height: 1.5;
-  }
-  
-  .green-feedback {
-    background-color: rgba(0, 255, 65, 0.05);
-    border: 1px solid rgba(0, 255, 65, 0.2);
-    color: hsl(var(--text-primary));
-  }
-  
-  .red-feedback {
-    background-color: rgba(239, 68, 68, 0.05);
-    border: 1px solid rgba(239, 68, 68, 0.2);
-    color: hsl(var(--text-primary));
-  }
-  
-  @media (max-width: 768px) {
-    .article-title {
-      font-size: 2rem;
-    }
-  }
-</style>

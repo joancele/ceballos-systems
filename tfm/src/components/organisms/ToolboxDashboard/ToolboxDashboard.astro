@@ -1,0 +1,349 @@
+---
+import './ToolboxDashboard.css';
+import SoftwareBlock from '../SoftwareBlock/SoftwareBlock.astro';
+import HardwareBlock from '../HardwareBlock/HardwareBlock.astro';
+import RetosBlock from '../RetosBlock/RetosBlock.astro';
+import GlosarioBlock from '../GlosarioBlock/GlosarioBlock.astro';
+---
+
+<div class="site-wrapper">
+  <!-- Narrative Briefing (Director de Misión) -->
+  <section class="content-section" id="narrative-briefing">
+    <div class="log-panel mono">
+      <div class="log-header-row">
+        <span class="log-header">*** TRANSMISIÓN ENTRANTE - DIRECTOR DE MISIÓN ***</span>
+        <span class="live-blink">• RECEPTOR ACTIVO</span>
+      </div>
+      <p class="log-body">
+        "Atención a todas las tripulaciones: nos aproximamos a la fase crítica del despliegue en la superficie marciana. Para garantizar la viabilidad y autosustentabilidad del Biodomo Inteligente, suspendemos temporalmente las operaciones conjuntas en equipo base. Cada tripulante debe integrarse de inmediato en su Unidad de Élite técnica. Vuestra responsabilidad individual en esta fase es absoluta: debéis dominar vuestro subsistema y regresar preparados para liderar vuestra área en el taller. Recordad la corresponsabilidad de la misión: un error de precisión en vuestro rol compromete los recursos de toda la tripulación. Iniciando transferencia de protocolos..."
+      </p>
+      <p class="log-footer">*** FIN DE TRANSMISIÓN — SELECCIONA TU ROL ASIGNADO ***</p>
+    </div>
+  </section>
+
+  <!-- SPECIALTY HUB (SELECTION VIEW) -->
+  <section class="content-section" id="specialty-hub">
+    <div class="hub-grid-layout">
+      
+      <!-- Card 1: DISEÑO -->
+      <div class="specialty-card glass border-design disabled-card" data-role="design">
+        <div class="card-glow-bg glow-design"></div>
+        <div class="card-header">
+          <span class="card-index mono index-design">[01]</span>
+          <span class="status-badge status-pending mono" id="hub-badge-design">BLOQUEADO POR ROL</span>
+        </div>
+        <div class="card-main">
+          <h3 class="card-title">Academia de Diseño</h3>
+          <span class="card-subtitle mono">CAD, Modelado 3D y Optimización Espacial</span>
+          <p class="card-desc">Modela el chasis hermético y la cúpula del biodomo mediante Tinkercad CAD. Analiza las tolerancias geométricas del hardware y define la planimetría técnica acotada (planta, alzado y perfil) para la distribución óptima de los sensores hídricos y ambientales.</p>
+        </div>
+        <div class="card-progress-section">
+          <div class="progress-info mono">
+            <span>Progreso:</span>
+            <span id="hub-progress-text-design">0%</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-bar bar-design" id="hub-bar-design" style="width: 0%"></div>
+          </div>
+        </div>
+        <button class="btn-dashboard btn-design start-btn" data-target="design" disabled>
+          Acceso Restringido
+        </button>
+      </div>
+
+      <!-- Card 2: PROGRAMACIÓN -->
+      <div class="specialty-card glass border-develop" data-role="develop">
+        <div class="card-glow-bg glow-develop"></div>
+        <div class="card-header">
+          <span class="card-index mono index-develop">[02]</span>
+          <span class="status-badge status-active mono" id="hub-badge-develop">DISPONIBLE / ASIGNADO</span>
+        </div>
+        <div class="card-main">
+          <h3 class="card-title">Academia de Programación</h3>
+          <span class="card-subtitle mono">Algorítmica, Telemetría y Calibración</span>
+          <p class="card-desc">Aplica la cultura del error para depurar los bugs lógicos del software base en ArduinoBlocks. Calibrarás los rangos analógicos del sensor de humedad capacitivo, estructurando el bucle de control condicional no bloqueante para la bomba.</p>
+        </div>
+        <div class="card-progress-section">
+          <div class="progress-info mono">
+            <span>Progreso:</span>
+            <span id="hub-progress-text-develop">0%</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-bar bar-develop" id="hub-bar-develop" style="width: 0%"></div>
+          </div>
+        </div>
+        <button class="btn-dashboard btn-develop start-btn" data-target="develop">
+          Acceder a Terminal
+        </button>
+      </div>
+
+      <!-- Card 3: CONSTRUCCIÓN -->
+      <div class="specialty-card glass border-build disabled-card" data-role="build">
+        <div class="card-glow-bg glow-build"></div>
+        <div class="card-header">
+          <span class="card-index mono index-build">[03]</span>
+          <span class="status-badge status-pending mono" id="hub-badge-build">BLOQUEADO POR ROL</span>
+        </div>
+        <div class="card-main">
+          <h3 class="card-title">Academia de Construcción</h3>
+          <span class="card-subtitle mono">Mecanizado, Ensamblaje Físico y PRL</span>
+          <p class="card-desc">Traslada la planimetría técnica de los diseñadores al material real en el Aula-Taller Maker. Mecaniza el chasis estanco utilizando herramientas manuales de corte y perforación, aplicando estrictamente los protocolos de prevención de riesgos laborales (PRL).</p>
+        </div>
+        <div class="card-progress-section">
+          <div class="progress-info mono">
+            <span>Progreso:</span>
+            <span id="hub-progress-text-build">0%</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-bar bar-build" id="hub-bar-build" style="width: 0%"></div>
+          </div>
+        </div>
+        <button class="btn-dashboard btn-build start-btn" data-target="build" disabled>
+          Acceso Restringido
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WORKSTATION CONSOLE (DYNAMIC DETAILED VIEW) -->
+  <section class="content-section hidden" id="workstation-console">
+    <!-- Console Top Controls -->
+    <div class="console-nav">
+      <button class="btn-back-hub mono" id="back-to-hub">
+        ← Volver al Menú Principal
+      </button>
+      
+      <div class="console-tabs">
+        <button class="console-tab-btn" data-role="design" id="tab-design" disabled style="opacity: 0.5; cursor: not-allowed; pointer-events: none;">
+          <span class="tab-dot dot-design"></span> Diseño (Inactivo)
+        </button>
+        <button class="console-tab-btn" data-role="develop" id="tab-develop">
+          <span class="tab-dot dot-develop"></span> Programación
+        </button>
+        <button class="console-tab-btn" data-role="build" id="tab-build" disabled style="opacity: 0.5; cursor: not-allowed; pointer-events: none;">
+          <span class="tab-dot dot-build"></span> Construcción (Inactivo)
+        </button>
+      </div>
+    </div>
+
+    <!-- Active Console Area -->
+    <div class="console-workspace">
+      
+      <!-- PANELS FOR DESIGN (DISEÑO) -->
+      <div class="workstation-pane hidden" id="pane-design">
+        <div class="pane-grid">
+          <!-- Left Column: Minireto & Interactive Canvas -->
+          <div class="pane-left glass border-design">
+            <div class="pane-section-header">
+              <span class="mono text-design">[RECURSO_ASIGNADO]</span>
+              <h3>Minireto de Diseño</h3>
+            </div>
+            <div class="challenge-narrative">
+              <p>
+                El espacio en la base marciana es crítico. Debes diseñar una cúpula estanca que albergue el cultivo hidropónico optimizando el volumen. El chasis físico final se construirá con una caja de policarbonato reciclado de <strong>20 × 15 × 15 cm</strong>.
+              </p>
+            </div>
+            
+            <!-- Interactive Simulator: Tinkercad Planimetry Planner -->
+            <div class="interactive-simulator">
+              <span class="simulator-label mono">SIMULADOR DE TOLERANCIAS E INSTRUMENTACIÓN:</span>
+              <p class="simulator-desc">Ubica los componentes manteniendo el margen de seguridad de 5mm contra humedades en la caja de 20x15cm.</p>
+              
+              <div class="design-canvas-container">
+                <div class="canvas-grid" id="design-canvas">
+                  <div class="canvas-boundary mono">CAJA: 200 x 150 mm</div>
+                  <!-- Placed items will go here -->
+                  <div class="draggable-component" id="comp-pump" style="left: 10px; top: 10px;">Bomba H2O</div>
+                  <div class="draggable-component" id="comp-sensor" style="left: 100px; top: 80px;">Sensor YL-69</div>
+                  <div class="draggable-component" id="comp-vent" style="left: 60px; top: 40px;">Ventana Vent.</div>
+                </div>
+              </div>
+              
+              <div class="simulator-controls">
+                <button class="btn-action mono" id="verify-layout-btn">Verificar Tolerancia (5mm)</button>
+                <div class="simulator-status mono" id="layout-status">Esperando posicionamiento...</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Step Checklist & Certification -->
+          <div class="pane-right glass border-design">
+            <div class="pane-section-header">
+              <span class="mono text-design">[ANDAMIAJE_METODOLOGICO]</span>
+              <h3>Checklist de Pasos Técnicos</h3>
+            </div>
+            
+            <div class="checklist-container">
+              <label class="checklist-item">
+                <input type="checkbox" class="step-checkbox" data-role="design" data-step="0">
+                <span class="checkbox-custom"></span>
+                <div class="checkbox-text">
+                  <strong>1. Análisis de Tolerancias:</strong> Entra en Tinkercad y modela un prisma con las medidas máximas (20x15x15cm).
+                </div>
+              </label>
+              <label class="checklist-item">
+                <input type="checkbox" class="step-checkbox" data-role="design" data-step="1">
+                <span class="checkbox-custom"></span>
+                <div class="checkbox-text">
+                  <strong>2. Ubicación del Hardware:</strong> Modela cilindros ciegos que simulen la bomba peristáltica y el sensor de suelo (YL-69) con 5mm de margen.
+                </div>
+              </label>
+              <label class="checklist-item">
+                <input type="checkbox" class="step-checkbox" data-role="design" data-step="2">
+                <span class="checkbox-custom"></span>
+                <div class="checkbox-text">
+                  <strong>3. Planimetría:</strong> Exporta planta, alzado y perfil acotado para entregárselo al Constructor.
+                </div>
+              </label>
+            </div>
+
+            <div class="certification-panel border-design-dim">
+              <div class="cert-status-row">
+                <span class="mono">AUDITORÍA:</span>
+                <span class="cert-indicator mono text-danger" id="cert-indicator-design">INCOMPLETA</span>
+              </div>
+              <button class="btn-certify btn-design-glow" id="btn-certify-design" disabled>
+                Certificar Misión de Diseño
+              </button>
+              <div class="console-terminal-log mono" id="terminal-design">
+                > Esperando completado de todas las directrices...
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PANELS FOR PROGRAMMING (PROGRAMACIÓN) -->
+      <div class="workstation-pane hidden" id="pane-develop">
+        <!-- Navigation bar fixed inside the pane -->
+        <nav class="academy-nav glass">
+          <div class="nav-brand mono">💻 ACADEMIA DE PROGRAMADORES</div>
+          <ul class="nav-links mono">
+            <li><a href="#dev-block-software">1. Software</a></li>
+            <li><a href="#dev-block-hardware">2. Hardware</a></li>
+            <li><a href="#dev-block-retos">3. Retos</a></li>
+            <li><a href="#dev-block-glosario">4. Glosario</a></li>
+          </ul>
+        </nav>
+
+        <div class="academy-content">
+          <SoftwareBlock />
+          <HardwareBlock />
+          <RetosBlock />
+          <GlosarioBlock />
+        </div>
+      </div>
+
+      <!-- PANELS FOR CONSTRUCTION (CONSTRUCCIÓN) -->
+      <div class="workstation-pane hidden" id="pane-build">
+        <div class="pane-grid">
+          <!-- Left Column: Minireto & Interactive Safety Equipping -->
+          <div class="pane-left glass border-build">
+            <div class="pane-section-header">
+              <span class="mono text-build">[MECANIZADO_Y_TALLER]</span>
+              <h3>Minireto de Construcción</h3>
+            </div>
+            <div class="challenge-narrative">
+              <p>
+                Responsable de la integridad física de la tripulación. Recibe los planos, mecaniza el chasis físico perforando pasos de tubería de 6mm y asegura la estanqueidad aplicando estrictamente el protocolo de prevención de riesgos.
+              </p>
+            </div>
+            
+            <!-- Interactive Simulator: PPE Equipping -->
+            <div class="interactive-simulator">
+              <span class="simulator-label mono">AUDITORÍA DE PREVENCIÓN (PRL):</span>
+              <p class="simulator-desc">Equipa al constructor con el kit de protección adecuado antes de operar la herramienta de calor y perforación.</p>
+              
+              <div class="ppe-equip-grid">
+                <div class="ppe-item glass" data-safety="true" id="ppe-goggles">
+                  <span class="ppe-icon">🥽</span>
+                  <span class="ppe-name mono">Gafas de Seguridad</span>
+                </div>
+                <div class="ppe-item glass" data-safety="true" id="ppe-gloves">
+                  <span class="ppe-icon">🧤</span>
+                  <span class="ppe-name mono">Guantes Térmicos</span>
+                </div>
+                <div class="ppe-item glass" data-safety="false" id="ppe-helmet">
+                  <span class="ppe-icon">🪖</span>
+                  <span class="ppe-name mono">Casco Espacial</span>
+                </div>
+                <div class="ppe-item glass" data-safety="true" id="ppe-clamp">
+                  <span class="ppe-icon">🗜️</span>
+                  <span class="ppe-name mono">Sargento de Apriete</span>
+                </div>
+              </div>
+              
+              <div class="simulator-controls">
+                <button class="btn-action mono" id="verify-ppe-btn">Iniciar Auditoría PRL</button>
+                <div class="simulator-status mono" id="ppe-status">Selecciona los elementos de seguridad mínimos obligatorios.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Step Checklist & Certification -->
+          <div class="pane-right glass border-build">
+            <div class="pane-section-header">
+              <span class="mono text-build">[ANDAMIAJE_METODOLOGICO]</span>
+              <h3>Checklist de Pasos Técnicos</h3>
+            </div>
+            
+            <div class="checklist-container">
+              <label class="checklist-item">
+                <input type="checkbox" class="step-checkbox" data-role="build" data-step="0">
+                <span class="checkbox-custom"></span>
+                <div class="checkbox-text">
+                  <strong>1. Marcado y Trazado:</strong> Usa la escuadra y punzón para marcar las cotas del plano sobre el plástico.
+                </div>
+              </label>
+              <label class="checklist-item">
+                <input type="checkbox" class="step-checkbox" data-role="build" data-step="1">
+                <span class="checkbox-custom"></span>
+                <div class="checkbox-text">
+                  <strong>2. Mecanizado Seguro:</strong> Fija la pieza al banco con sargentos y perfora a 6mm para paso de tubos.
+                </div>
+              </label>
+              <label class="checklist-item">
+                <input type="checkbox" class="step-checkbox" data-role="build" data-step="2">
+                <span class="checkbox-custom"></span>
+                <div class="checkbox-text">
+                  <strong>3. Auditoría PRL:</strong> Prepara guantes térmicos y gafas antes de sellar las juntas con cola termofusible.
+                </div>
+              </label>
+            </div>
+
+            <div class="certification-panel border-build-dim">
+              <div class="cert-status-row">
+                <span class="mono">AUDITORÍA:</span>
+                <span class="cert-indicator mono text-danger" id="cert-indicator-build">INCOMPLETA</span>
+              </div>
+              <button class="btn-certify btn-build-glow" id="btn-certify-build" disabled>
+                Certificar Misión de Construcción
+              </button>
+              <div class="console-terminal-log mono" id="terminal-build">
+                > Esperando control de seguridad y mecanizado...
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- GLOSARIO MODAL (DRAWER FOR DUA COMPLIANCE) -->
+  <div class="glosario-drawer hidden" id="glosario-drawer">
+    <div class="drawer-content glass">
+      <div class="drawer-header">
+        <span class="drawer-title mono">📖 DEFINICIÓN TÉCNICA</span>
+        <button class="btn-close-drawer" id="close-drawer-btn">×</button>
+      </div>
+      <div class="drawer-body">
+        <h3 id="drawer-term-title">Término</h3>
+        <p id="drawer-term-desc">Definición del término...</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="./ToolboxDashboard.js"></script>
