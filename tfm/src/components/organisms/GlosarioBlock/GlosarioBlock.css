@@ -42,3 +42,25 @@
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
+
+/* Light Theme Overrides */
+[data-theme="light"] .glosario-card h4 {
+  color: #7c3aed; /* darker purple for better contrast on white */
+}
+
+[data-theme="light"] .glosario-card:hover {
+  background-color: rgba(124, 58, 237, 0.02);
+}
+
+@media (max-width: 900px) {
+  .glosario-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .glosario-list {
+    grid-template-columns: 1fr;
+  }
+}
+

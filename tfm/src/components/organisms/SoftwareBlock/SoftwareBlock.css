@@ -501,3 +501,44 @@
   background-color: rgba(0, 0, 0, 0.03);
 }
 
+[data-theme="light"] .slide-dot {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="light"] .slide-dot:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="light"] .sw-stepper {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+[data-theme="light"] .step-btn:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .visual-glow-overlay {
+  background: radial-gradient(circle at center, transparent 30%, rgba(248, 248, 248, 0.4) 100%);
+  box-shadow: inset 0 0 30px rgba(14, 112, 44, 0.05);
+}
+
+[data-theme="light"] .checklist-item:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+[data-theme="light"] .panel-card:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+[data-theme="light"] .panel-card.active-panel {
+  background-color: rgba(14, 112, 44, 0.04);
+}
+
+[data-theme="light"] .slide-content {
+  background-color: rgba(0, 0, 0, 0.01);
+}
+
+[data-theme="light"] .step-connector {
+  background-color: rgba(14, 112, 44, 0.15);
+}
+

@@ -1078,3 +1078,33 @@
     order: -1;
   }
 }
+
+/* ===== LIGHT THEME OVERRIDES ===== */
+[data-theme="light"] .lock-overlay {
+  background-color: rgba(245, 245, 245, 0.8);
+}
+
+[data-theme="light"] .hw-tab-btn {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+[data-theme="light"] .hardware-tab-content {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+[data-theme="light"] .dht22-render-img,
+[data-theme="light"] .soil-render-img,
+[data-theme="light"] .ldr-render-img,
+[data-theme="light"] .pump-render-img,
+[data-theme="light"] .led-render-img {
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
+}
+
+[data-theme="light"] .connection-schematic {
+  background-color: rgba(0, 0, 0, 0.03);
+  border-color: rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .resistor-notice {
+  border-color: rgba(0, 0, 0, 0.08);
+}

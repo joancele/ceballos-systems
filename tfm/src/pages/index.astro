@@ -7,7 +7,7 @@ import './index.css';
 const hubUrl = import.meta.env.PUBLIC_HUB_URL || 'https://joseceballos.link';
 ---
 
-<Layout title="CEBALLOS_SYSTEMS | Proyecto TFM">
+<Layout title="CEBALLOS_SYSTEMS | TFM — Innovación Didáctica en Tecnología y Digitalización">
   <div class="site-wrapper">
     <!-- Sub-Hub Custom Header -->
     <header class="subhub-header">
@@ -27,69 +27,120 @@ const hubUrl = import.meta.env.PUBLIC_HUB_URL || 'https://joseceballos.link';
     </header>
     
     <main class="main-content">
-      <!-- Title Section -->
+      <!-- ── CABECERA DEL PROYECTO ── -->
       <section class="title-section">
         <div class="project-badge mono">[PROYECTO_TFM]</div>
         <h1 class="page-title">
-          El Invernadero Automatizado
+          Innovación Didáctica en Tecnología y Digitalización
         </h1>
-        <p class="page-subtitle">
-          Diseño e implementación de un Biodomo Inteligente enmarcado en la narrativa gamificada "Misión a Marte" para Tecnología y Digitalización.
-        </p>
+        <blockquote class="page-subtitle-quote">
+          "Propuesta metodológica y tecnológica para la transformación del Aula-Taller Maker en la Educación Secundaria Obligatoria."
+        </blockquote>
       </section>
       
-      <!-- Core Info Panel -->
+      <!-- ── CUERPO PRINCIPAL: DOS COLUMNAS ── -->
       <div class="grid-layout">
-        <!-- Presentation Column -->
+
+        <!-- ══ COLUMNA IZQUIERDA: MARCO DEL TFM ══ -->
         <div class="info-column">
-          <section class="text-section card glass">
+
+          <!-- Presentación del Proyecto -->
+          <section class="text-section card glass border-accent">
             <h2 class="section-heading mono">// PRESENTACIÓN DEL PROYECTO</h2>
-            <p>
-              Este proyecto de Trabajo Fin de Máster (TFM) propone una arquitectura pedagógica completa para la materia de Tecnología y Digitalización en Educación Secundaria. A través del diseño y construcción cooperativa de un invernadero automatizado con Arduino, los alumnos adquieren habilidades clave en pensamiento computacional, electrónica analógica y cultura maker.
-            </p>
-            <p>
-              La unidad está contextualizada bajo la narrativa inmersiva <strong>"Misión a Marte"</strong>, donde cada tripulación tiene la responsabilidad de programar y construir los sistemas de soporte vital hídrico de su propia base espacial (Base Ares-V), estableciendo puentes de transferencia de conocimiento constantes con problemáticas del mundo real (Doñana).
-            </p>
+            <div class="text-body">
+              <p>
+                Este Trabajo Fin de Máster (TFM) investiga y desarrolla un marco operativo para la enseñanza de <strong>Tecnología y Digitalización en 3.º de la ESO</strong> bajo las directrices de la LOMLOE en Andalucía. La investigación aborda el desafío de coordinar el aprendizaje basado en proyectos (ABP) y la cultura Maker con las exigencias normativas de la evaluación por competencias de los saberes de computación y digitalización.
+              </p>
+              <p>
+                El núcleo de la propuesta demuestra cómo la integración de herramientas de software de código abierto y hardware libre puede coexistir con un diseño curricular inclusivo. El objetivo final es dotar a los futuros docentes de un modelo replicable que potencie el <strong>pensamiento computacional</strong>, la gestión autónoma del taller y la transferencia de conocimiento ecosocial en el aula.
+              </p>
+            </div>
           </section>
 
-          <section class="text-section card glass">
-            <h2 class="section-heading mono">// PILARES METODOLÓGICOS</h2>
+          <!-- Ejes de Investigación -->
+          <section class="text-section card glass border-accent">
+            <h2 class="section-heading mono">// EJES DE INVESTIGACIÓN</h2>
             <ul class="pillars-list">
               <li>
-                <strong>Cultura del Error:</strong> Desestigmatización del fallo técnico a través de dinámicas de depuración dirigida (debugging). Los bugs no son fracasos; son hitos de aprendizaje.
+                <div class="pillar-header">
+                  <span class="pillar-marker mono">::</span>
+                  <strong>Inclusión y Andamiaje DUA</strong>
+                </div>
+                <p class="pillar-desc">Modelización de estrategias que eliminan las barreras de aprendizaje en entornos técnicos. A través de la <em>Evaluación Disociada</em>, la propuesta demuestra analíticamente cómo ponderar el desempeño procedimental y actitudinal de forma independiente a la precisión técnica pura, garantizando la equidad.</p>
               </li>
               <li>
-                <strong>Coeducación Líquida:</strong> Erradicación de los sesgos de género mediante cartas de rol líquidas (Diseño, Programación, Construcción) que rotan periódicamente.
+                <div class="pillar-header">
+                  <span class="pillar-marker mono">::</span>
+                  <strong>Coeducación y Gestión de Aula</strong>
+                </div>
+                <p class="pillar-desc">Desarrollo de dinámicas de trabajo cooperativo optimizadas para mitigar la brecha de género en las disciplinas STEAM. Se analiza la efectividad de la <em>Coeducación Líquida</em> mediante la rotación síncrona de roles técnicos (Diseño, Programación, Construcción) en el Aula-Taller.</p>
               </li>
               <li>
-                <strong>Evaluación Disociada:</strong> Separación metodológica del esfuerzo/procesos frente a la precisión puramente técnica para garantizar una evaluación inclusiva (DUA).
+                <div class="pillar-header">
+                  <span class="pillar-marker mono">::</span>
+                  <strong>Resiliencia y Pensamiento Crítico</strong>
+                </div>
+                <p class="pillar-desc">Implementación de la <em>Cultura del Error</em> como vector de aprendizaje en la ingeniería de software. El TFM propone metodologías donde la depuración dirigida (debugging) y el análisis de fallos lógicos se integran como hitos evaluables en el cuaderno del docente.</p>
               </li>
             </ul>
           </section>
+
         </div>
 
-        <!-- CTA & Repository Column -->
+        <!-- ══ COLUMNA DERECHA: TARJETA DE DESPLIEGUE PRÁCTICO ══ -->
         <div class="cta-column">
-          <div class="cta-card border-accent highlight-panel">
-            <span class="cta-badge mono">[ACCESO_REPOSITORIO]</span>
-            <h2 class="cta-card-title">Recursos Didácticos</h2>
-            <p class="cta-card-desc">
-              Accede al repositorio completo de recursos y prototipos interactivos diseñados para la defensa y despliegue del proyecto.
-            </p>
-            
-            <div class="card-bullets mono">
-              <span>-> Portal de la Academia (Jigsaw)</span>
-              <span>-> App de Test (Repetición Espaciada)</span>
-              <span>-> Rúbricas y Dianas del Proyecto</span>
-              <span>-> Cuadro de Mando de Calificación</span>
+          <div class="cta-card highlight-panel">
+
+            <!-- Cabecera de la Tarjeta -->
+            <div class="cta-card-top">
+              <div class="cta-dual-badges">
+                <span class="cta-badge mono">[PROYECTO_PILOTO]</span>
+                <span class="pilot-status-dot mono">● DESPLEGADO</span>
+              </div>
+              <h2 class="cta-card-title">
+                Situación de Aprendizaje:<br/>
+                <span class="cta-title-accent">SA8 — El Invernadero Automatizado</span>
+              </h2>
+              <p class="cta-card-desc">
+                Acceso al ecosistema completo de recursos, dossiers técnicos y prototipos interactivos diseñados para la implementación real en el aula de los principios defendidos en este TFM.
+              </p>
             </div>
 
-            <a href="/recursos" class="btn btn-outline cta-btn">
-              Explorar Recursos
-              <span class="btn-arrow">→</span>
-            </a>
+            <!-- Recursos Disponibles -->
+            <div class="cta-resources">
+              <div class="resources-label mono">// RECURSOS DISPONIBLES</div>
+              <div class="card-bullets mono">
+                <a href="/sa8/actividad2/toolbox" class="resource-link">
+                  <span class="resource-arrow">→</span>
+                  <span>Portal de la Academia (Guías Jigsaw)</span>
+                </a>
+                <a href="/spaced-repetition-app/demostracion" class="resource-link">
+                  <span class="resource-arrow">→</span>
+                  <span>App de Test: Repetición Espaciada</span>
+                </a>
+                <a href="/sa8/calificacion/demostracion" class="resource-link">
+                  <span class="resource-arrow">→</span>
+                  <span>Matrices y Dianas de Evaluación (A3/A4)</span>
+                </a>
+                <a href="/sa8/calificacion/demostracion" class="resource-link">
+                  <span class="resource-arrow">→</span>
+                  <span>Cuadro de Mando de Calificación LOMLOE</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="cta-footer">
+              <a href="/recursos" class="btn-cta-main">
+                Auditar Recursos de la SA
+                <span class="btn-arrow">→</span>
+              </a>
+              <p class="cta-footnote mono">Protocolo Marte: La Colonia Autosostenible · 3.º ESO</p>
+            </div>
+
           </div>
         </div>
+
       </div>
     </main>
     

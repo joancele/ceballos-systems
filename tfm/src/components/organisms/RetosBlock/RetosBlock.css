@@ -163,3 +163,18 @@
   overflow-y: auto;
   line-height: 1.5;
 }
+
+/* ===== LIGHT THEME OVERRIDES ===== */
+[data-theme="light"] .lock-overlay {
+  background-color: rgba(245, 245, 245, 0.8);
+}
+
+[data-theme="light"] .progress-track {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .btn-certify {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
